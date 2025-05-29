@@ -1,0 +1,16 @@
+@media (min-width: 639px) {
+    .card_content {
+        @apply flex
+    }
+    .edit_delete_icon {
+        @apply flex-wrap
+    }
+}
+@media (min-width: 640px) {
+    .card_content {
+        @apply w-1/5
+    }
+    .edit_delete_icon {
+        @apply w-1/12
+    }      
+}

@@ -1,0 +1,11 @@
+@media (max-width:413px){
+   .hide_graph_text{ @apply flex}
+}
+
+@media (min-width:414px){
+    .hide_graph_text{ @apply hidden}
+
+}
+@media (min-width: 767px){
+    .col_issuer{ @apply text-3xl }
+}

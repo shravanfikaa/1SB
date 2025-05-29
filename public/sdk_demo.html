@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="FD Onboarding Demo" />
+  <title>FD Onboarding</title>
+</head>
+<style>
+  :root {
+    width: 100%;
+    height: 100%;
+  }
+
+  header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.45px;
+    color: #282c3f;
+  }
+
+  .onboarding-button {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    letter-spacing: 0.53px;
+    border: none;
+    width: 160px;
+    height: 60px;
+    background-color: #3b39d9;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
+  }
+</style>
+
+<script>
+  const fetchAccessToken = async () => {
+    const requestBody = {
+      username: 'admin',
+      password: 'admin',
+    };
+
+    const accessToken = await fetch('https://demo.fd.1silverbullet.tech/api/v1/login', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: { 'Content-type': 'application/json; charset=UTF-8' }
+    }).then(response => response.json())
+      .then(json => json.accessToken)
+      .catch(err => console.log(err));
+
+    return await accessToken;
+  }
+
+  const handleOnboardingBtnClick = async () => {
+    const accessToken = await fetchAccessToken();
+    const src = `https://demo.fd.1silverbullet.tech`;
+    const widgetConfig = {
+      domainLink: src,
+      accessToken: accessToken,
+      width: '30%',
+      height: '100%',
+      backgroundColor: '#FFFFFF',
+      top: '0',
+      left: '35%',
+      position: 'absolute',
+      className: 'user-onboarding-iframe'
+    }
+    const widget = new window.userOnboarding(widgetConfig);
+    widget.start();
+  }
+
+</script>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <header>
+  </header>
+  <div id="root">
+    <button class="onboarding-button" onclick="handleOnboardingBtnClick()">
+      Begin Onboarding
+    </button>
+  </div>
+</body>
+<script async src="https://demo.fd.1silverbullet.tech/UserOnboarding.js" type="module">
+</script>
+
+</html>

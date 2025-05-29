@@ -1,0 +1,22 @@
+@media (max-width: 414px) {
+    .card_positioning {
+        @apply flex flex-col-reverse text-sm
+    }
+    .greencard_width{
+        @apply w-full
+    }
+    .input_width{
+        @apply w-full mt-5
+    }
+}
+@media (min-width: 415px) {
+    .card_positioning {
+        @apply flex flex-row gap-5
+    }
+    .greencard_width{
+        @apply w-1/3
+    }
+    .input_width{
+        @apply w-2/3 
+    }    
+}

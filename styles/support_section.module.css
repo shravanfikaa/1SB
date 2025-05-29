@@ -1,0 +1,18 @@
+@media (max-width: 839px) {
+    .support_section_desktop {
+        @apply hidden
+    }   
+    .support_section_mobile {
+        @apply  flex flex-wrap ;
+      }   
+  }
+      
+  @media (min-width: 840px) { 
+    .support_section_desktop {
+     @apply flex justify-between items-center text-xl gap-3 py-1 px-2 text-fd-primary rounded-full bg-indigo-100;      
+      }  
+      .support_section_mobile {
+        @apply hidden;
+      } 
+  }  
+  

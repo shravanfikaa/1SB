@@ -1,0 +1,36 @@
+@media (min-width: 767px) {
+  .filterButton {
+    @apply hidden;
+  }
+  .filterContainer {
+    @apply block;
+  }
+  .mobileViewFilter {
+    @apply hidden;
+  }
+}
+    
+@media (max-width: 768px) { 
+  .filterButton {
+    @apply block;
+  }
+  .mobileViewFilter {
+    @apply block;
+  }
+  .filterContainer {
+    @apply hidden;
+  }
+  .cardContainer {
+    @apply w-full
+  }
+  .withdraw_container {
+    @apply flex flex-col
+  }
+  .withdraw_card {
+    @apply w-full
+  }
+  .settingHeader {
+    @apply p-6 border-b-2 border-gray-200;
+    background-color: white;
+  }
+} 

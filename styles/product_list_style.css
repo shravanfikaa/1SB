@@ -1,0 +1,974 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+  /* ... */
+
+@layer components {
+  @media ((min-width: 100px) and (max-width:414px)) {
+  
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+   
+    .user-journey-back-button{
+      background-color: white;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    padding:3px;
+
+    }
+    .user-journey-footer-styling{
+      @apply fixed bottom-0   bg-white 
+    }
+    .hide-continue-back-btn{
+      @apply flex  justify-between
+    }
+    
+    .basic-font-size{
+      @apply text-xs
+    }
+    .residental-boxsize{
+      @apply p-2 text-xs
+    }
+    .corporate-heading-padding{
+      @apply space-x-4
+    }
+    .corporate-plan-text{
+      @apply text-sm mt-5
+    }
+    .marital-status-padding{
+      @apply flex-col space-y-2
+     }
+    .corporate-plan-image{
+      @apply w-20
+    }
+    .sidebarHide{
+      @apply hidden
+    }
+    .componentWidth{
+      @apply w-full
+    }
+    .rating-left-padding{
+      @apply ml-32
+    }
+   .footer-padding{
+    @apply space-x-20
+   }
+  
+    .products-styling{
+      @apply text-xs mr-3
+    }
+    .sb-image-small{
+      @apply hidden
+    }
+    .cardSize{
+      width:auto;
+      height: 150px;
+      margin:10px;
+
+    }
+    .dashboard-payout{
+      @apply text-xs hidden
+    }
+   
+    
+    .addtocompare{
+      margin-left: 4px;
+    }
+   
+   
+    .flexcol{
+      @apply flex-col
+    }
+
+     .tableconversion{
+      @apply flex-col 
+
+     }
+    .fdplancardpadding {
+      @apply  my-2 mt-2 ml-3  text-xs p-2
+    }
+    .space-between{
+      @apply pr-8
+    }
+    .tablefontsize{
+      @apply text-xs
+    }
+    .button-active {
+      /* background-color: #3835cf; */
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      opacity: 1;
+      text-align: center;
+      font-weight: 400;
+      width: 100px;
+      height: auto;
+      color: white;
+      padding:4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+    }
+    .compare-text{
+      @apply text-xs 
+    }
+    .card-text{
+      @apply text-xs 
+    }
+    .dashboard-title{
+      @apply text-xs 
+    }
+    .change-to-rating{
+      @apply  hidden
+    }
+
+    .button-passive {
+      background-color: white;
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 400;
+      height: auto;
+      /* color: #1e1d83;
+      border-color: rgb(37, 32, 134); */
+      border-width: 1px;
+      padding:4px;
+
+       
+    }
+    .dropdown-width{
+      width:200px
+    }
+    .dashboard-left-padding{
+      padding-left: 25px;
+       }
+       .dashboard-right-padding{
+         padding-right:25px;
+       }
+       .dashboard-top-padding{
+        padding-top:4px;
+      }
+      .dashboard-bottom-padding{
+        padding-bottom:4px;
+      }
+      .Dashfooter {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-color: white;
+        text-align: center;
+        border: #666666;
+        box-shadow: #666666;
+     }
+     .userjourney-Dashfooter {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10%;
+      background-color: white;
+      text-align: center;
+      border: #666666;
+      box-shadow: #666666;
+   }
+  }
+  @media ((min-width: 414px) and (max-width:559px)) {
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+    
+  
+     .marital-status-padding{
+      @apply flex-col space-y-3
+     }
+    .rating-left-padding{
+      padding-left: 150px;
+    }
+    .tableconversion{
+      @apply flex-col
+
+     }
+     .cardSize{
+      width:450px;
+      height: auto;
+    }
+    .dashboard-payout{
+      @apply text-xs hidden
+    }
+    .footer-padding{
+      @apply space-x-56
+     }
+     .change-to-rating{
+      @apply  hidden
+    }
+      .dropdown-width{
+    width:200px
+  }
+  }
+
+  @media ((min-width: 560px) and (max-width:639px)) {
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+    .marital-status-padding{
+      @apply flex-row space-x-5
+    }
+    
+    .tableconversion{
+      @apply flex-row
+
+     }
+     .cardSize{
+      width:515px;
+      height: 170px;
+    }
+    .dashboard-payout{
+      @apply text-xs hidden
+    }
+    .footer-padding{
+      @apply space-x-80
+     }
+     .change-to-payout{
+      @apply hidden
+    }
+  }
+  @media ((min-width: 414px) and (max-width:639px)) {
+    .sidebar-padding{
+      @apply p-0.5
+    }
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+
+    .user-journey-back-button{
+      background-color: white;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    padding:3px;
+
+    }
+    .user-journey-footer-styling{
+      @apply fixed bottom-0   bg-white
+    }
+    
+    
+    .basic-font-size{
+      @apply text-xs
+    }
+    .residental-boxsize{
+      @apply p-2 text-xs
+    }
+    .corporate-heading-padding{
+      @apply space-x-8
+    }
+    .corporate-plan-text{
+      @apply text-sm mt-5
+    }
+    .corporate-plan-image{
+      @apply w-24
+    }
+  .sidebarHide{
+    @apply hidden
+  }
+  .componentWidth{
+    @apply w-full
+  }
+   .compare-logo-padding{
+    @apply mr-1
+   }    
+    .compare-text{
+      @apply text-xs 
+    }
+    .products-styling{
+      @apply text-xs mr-4
+    }
+    .sb-image-small{
+      @apply hidden
+    }
+    
+    .addtocompare{
+      margin-left: 4px;
+    }
+    .flexrow{
+      @apply flex flex-row
+    }
+      
+  
+  .fdplancardpadding {
+    @apply  my-3 mt-5 ml-5 text-sm p-4
+  }
+  .space-between{
+    @apply pr-10
+  }
+  .table-spacing{
+    @apply px-6
+   }
+   .tablefontsize{
+    @apply text-xs
+  }
+  .button-active {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 100px;
+    height: auto;
+    color: white;
+    padding:5px;
+
+  }
+  .card-text{
+    @apply text-sm
+  }
+  .dashboard-title{
+    @apply text-sm
+  }
+  .button-passive {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    height: auto;
+    /* color: #1e1d83;
+    border-color: rgb(37, 32, 134); */
+    border-width: 1px;
+    padding:5px;
+  }
+
+  .dashboard-left-padding{
+    padding-left: 25px;
+     }
+     .dashboard-right-padding{
+       padding-right:25px;
+     }
+     .dashboard-top-padding{
+      padding-top:4px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:4px;
+    }
+    .dropdown-right-margin{
+      margin-right: 30px;
+      
+    }
+    .Dashfooter {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10%;
+      background-color: white;
+      text-align: center;
+      border: #666666;
+      box-shadow: #666666;
+
+   }
+   .userjourney-Dashfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    text-align: center;
+    border: #666666;
+    box-shadow: #666666;
+
+ }
+
+}
+@media ((min-width: 640px) and (max-width:699px)) {
+  .sidebar-padding{
+    @apply p-0.5 text-xs
+  }
+  .cardSize{
+    width:450px;
+    height: 160px;
+  }
+  .dashboard-payout{
+    @apply text-xs hidden
+  }
+  .sidebarHide{
+    @apply hidden
+  }
+  .componentWidth{
+    @apply w-full
+  }
+}
+@media ((min-width: 700px) and (max-width:767px)) {
+  .sidebar-padding{
+    @apply p-1.5
+  }
+  .cardSize{
+    width:auto;
+    height: 170px;
+  }
+  .dashboard-payout{
+    @apply text-xs
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+}
+@media ((min-width: 640px) and (max-width:767px)) {
+ 
+  .userjourney-buttonpadding{
+    @apply space-x-6
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+  }
+  
+  .basic-font-size{
+    @apply text-sm
+  }
+  .residental-boxsize{
+    @apply p-3 text-xs
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .corporate-plan-text{
+    @apply text-base mt-3
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-8
+  }
+  .corporate-plan-image{
+    @apply w-24
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  .dropdown-inside-padding{
+    @apply ml-2
+  }
+  .dropdown-width{
+    padding-right: 6px;
+  }
+  .filter-title{
+    @apply text-xs
+  }
+  .sort-padding{
+    @apply right-6
+  }
+  .resetall-padding{
+    @apply right-20
+  }
+  .compare-logo-padding{
+    @apply mr-1
+   }  
+  .compare-noproduct-text{
+    @apply text-xs p-1
+  }
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-48
+   }
+  .dashboard-footer{
+    @apply hidden
+      
+  }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .compare-text{
+    @apply text-xs
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-small{
+    @apply hidden
+  }
+
+  .addtocompare{
+    margin-left: 5px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row my-3 ml-1
+
+   }
+   
+  .fdplancardpadding {
+    @apply  my-4 ml-8  text-sm p-3
+  }
+  .space-between{
+    @apply pr-2
+  }
+  .table-spacing{
+    @apply px-10
+   }
+   .tablefontsize{
+    @apply text-xs
+  }
+  .button-active {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 100px;
+    height: auto;
+    color: white;
+    padding:3px;
+
+  }
+  .card-text{
+    @apply text-sm
+  }
+  .dashboard-title{
+    @apply text-base
+  }
+  .button-passive {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    height: auto;
+    /* color: #1e1d83;
+    border-color: rgb(37, 32, 134); */
+    border-width: 1px;
+    padding:3px;
+
+   
+  }
+  .dashboard-left-padding{
+    padding-left: 35px;
+     }
+     .dashboard-right-padding{
+       padding-right:35px;
+     }
+     .dashboard-top-padding{
+      padding-top:5px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:5px;
+    }
+   
+}
+@media ((min-width: 768px) and (max-width:899px)) {
+
+  .compare-noproduct-text{
+    @apply text-xs p-1
+  }
+  .cardSize{
+    width:580px;
+    height: 17  0px;
+  }
+  .dashboard-payout{
+    @apply text-xs
+  }
+  .dropdown-right-margin{
+    margin-right: 12px;
+  }
+  .dropdown-inside-padding{
+    @apply ml-2
+  }
+  .dropdown-width{
+    padding-right: 5px;
+  }
+
+}
+@media ((min-width: 900px) and (max-width:1023px)) {
+  
+  .dropdown-inside-padding{
+    @apply ml-9
+  }
+  .compare-noproduct-text{
+    @apply text-sm p-2
+  }
+  .cardSize{
+    width:600px;
+    height: 150px;
+  }
+  .dashboard-payout{
+    @apply text-xs
+  }
+  .dropdown-right-margin{
+    margin-right: 16px;
+  }
+
+  .dropdown-width{
+    padding-right: 6px;
+  }
+ 
+}
+@media ((min-width: 640px) and (max-width:1049px)) {
+  .cancel-hidden{
+    @apply hidden
+  }
+}
+
+@media ((min-width: 768px) and (max-width:1023px)) {
+  .sidebar-padding{
+    @apply p-2.5
+  }
+  .userjourney-buttonpadding{
+    @apply space-x-12
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+  }
+  
+  .basic-font-size{
+    @apply text-sm
+  }
+  .residental-boxsize{
+    @apply p-4 text-sm
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-10
+  }
+  
+  .corporate-plan-image{
+    @apply w-32
+  }
+  .corporate-plan-text{
+    @apply text-base mt-5
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  
+  .filter-title{
+    @apply text-sm
+  }
+  .sort-padding{
+    @apply right-8
+  }
+  .resetall-padding{
+    @apply right-20
+  }
+  .compare-logo-padding{
+    @apply mr-2
+   }  
+ 
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-48
+   }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .dashboard-footer{
+    @apply hidden
+      
+  }
+  .compare-text{
+    @apply text-sm mr-4
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-large{
+    @apply hidden
+  }
+
+  .addtocompare{
+    margin-left: 5px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row
+
+   }
+  
+  .fdplancardpadding {
+    @apply  my-5 ml-10 text-base p-4
+  }
+  .space-between{
+    @apply pr-16
+  }
+  .dashboard-title{
+    @apply text-base
+  }
+  .table-spacing{
+    @apply px-6 
+   }
+   .tablefontsize{
+    @apply text-sm
+  }
+  .button-active {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: white;
+    padding:4px;
+
+  }
+  .card-text{
+    @apply text-sm
+  }
+
+  .button-passive {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    height: auto;
+    /* color: #1e1d83;
+    border-color: rgb(37, 32, 134); */
+    border-width: 1px;
+    padding:4px;
+
+   
+  }
+
+  .dashboard-left-padding{
+    padding-left: 45px;
+     }
+     .dashboard-right-padding{
+       padding-right:45px;
+     }
+     .dashboard-top-padding{
+      padding-top:7px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:7px;
+    }
+    
+   
+}
+@media ( (min-width: 1024px) ){
+  .sidebar-padding{
+    @apply p-2
+  }
+  .userjourney-buttonpadding{
+    @apply space-x-12
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+  }
+  .basic-font-size{
+    @apply text-sm
+  }
+  .residental-boxsize{
+    @apply p-3 text-base
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-16
+  }
+  .corporate-plan-text{
+    @apply text-lg mt-4
+  }
+  .corporate-plan-image{
+    @apply w-36
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+  .cardSize{
+    width:830px;
+    height: 180px;
+  }
+  .dashboard-payout{
+    @apply text-xs
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  .dropdown-inside-padding{
+    @apply ml-9
+  }
+  .dropdown-width{
+    padding-right: 6px;
+  }
+  .filter-title{
+    @apply text-sm
+  }
+  .filter-block{
+    @apply visible
+  }
+  .sort-padding{
+    @apply right-16
+  }
+  .resetall-padding{
+    @apply right-32
+  }
+  .compare-logo-padding{
+    @apply mr-3
+   }  
+  .compare-noproduct-text{
+    @apply text-sm p-2
+  }
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-64
+   }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .compare-text{
+    @apply text-base mr-6
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-large{
+    @apply hidden
+  }
+  .addtocompare{
+    margin-left: 6px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row
+
+   }
+  
+  .fdplancardpadding {
+    @apply  my-6 ml-10  text-lg p-4
+  }
+
+  .space-between{
+    @apply pr-28
+  }
+
+  .table-spacing{
+   @apply px-24
+  }
+  .tablefontsize{
+    @apply text-sm
+  }
+  .button-active {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    width: 140px;
+    height: auto;
+    color: white;
+    padding:4px;
+
+  
+  }
+  .card-text{
+    @apply text-base
+  }
+  .dashboard-title{
+    @apply text-lg
+  }
+  .button-passive {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    height: auto;
+    /* color: #1e1d83;
+    border-color: rgb(37, 32, 134); */
+    border-width: 1px;
+    padding:4px;
+
+   
+  }
+  .dropdown-width{
+    padding-right:20px ;
+  }
+ 
+  .dashboard-left-padding{
+ padding-left: 55px;
+  }
+  .dashboard-right-padding{
+    padding-right:55px;
+  }
+  .dashboard-top-padding{
+    padding-top:10px;
+  }
+  .dashboard-bottom-padding{
+    padding-bottom:10px;
+  }
+  .dropdown-right-margin{
+    margin-right: 20px;
+  }
+}
+}

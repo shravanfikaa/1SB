@@ -1,0 +1,20 @@
+@media (min-width: 641px) {
+  .details_container {
+    @apply w-1/2;
+  }
+  /* .input_container {
+    @apply flex gap-3;
+  } */
+}
+    
+@media (max-width: 768px) { 
+  .status_container {
+    @apply flex-col w-full h-fit;
+  }
+  .details_container {
+    @apply w-full;
+  }
+  .input_container {
+    @apply flex flex-col gap-3;
+  }
+}  

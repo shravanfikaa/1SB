@@ -1,0 +1,1682 @@
+@font-face {
+  font-family: "Light";   /*Can be any text*/
+  src: local("THICCCBOI-Light"),
+    url("../fonts/TTF/THICCCBOI-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";   /*Can be any text*/
+  src: local("THICCCBOI-Medium"),
+    url("../fonts/TTF/THICCCBOI-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bold";   /*Can be any text*/
+  src: local("THICCCBOI-Bold"),
+    url("../fonts/TTF/THICCCBOI-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ExtraBold";   /*Can be any text*/
+  src: local("THICCCBOI-ExtraBold"),
+    url("../fonts/TTF/THICCCBOI-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Light";   /*Can be any text*/
+  src: local("ApercuPro-Light"),
+    url("../fonts/Apercu/ApercuPro-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ExtraLight";   /*Can be any text*/
+  src: local("ApercuPro-ExtraLight"),
+    url("../fonts/Apercu/ApercuPro-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ApercuPro-Medium";   /*Can be any text*/
+  src: local("ApercuPro-Medium"),
+    url("../fonts/Apercu/ApercuPro-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ApercuPro-Bold";   /*Can be any text*/
+  src: local("ApercuPro-Bold"),
+    url("../fonts/Apercu/ApercuPro-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ApercuPro-Black";   /*Can be any text*/
+  src: local("ApercuPro-Black"),
+    url("../fonts/Apercu/ApercuPro-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ApercuPro-Regular";   /*Can be any text*/
+  src: local("ApercuPro-Regular"),
+    url("../fonts/Apercu/ApercuPro-Regular.ttf") format("truetype");
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+.text-regular {
+  font-family: "ApercuPro-Regular";
+}
+
+.text-medium {
+  font-family: "ApercuPro-Medium";
+}
+
+.text-bold {
+  font-family: "ApercuPro-Bold";
+}
+
+.text-thicccboi-bold {
+  font-family:"Bold";
+}
+
+.text-thicccboi-extra-bold {
+  font-family:"ExtraBold";
+}
+
+.text-thicccboi-medium {
+  font-family:"Medium";
+}
+
+.text-font {
+  font: normal normal medium 24px/30px Apercu Pro;
+}
+
+.text-apercu{
+  font-family:"Light"; 
+}
+
+.text-apercu-medium{
+  font-family: "ApercuPro-Medium"; 
+}
+
+.text-apercu-regular{
+  font-family: "ApercuPro-Regular"; 
+}
+
+.text-apercu-extra-light{
+  font-family: "ExtraLight";
+}
+
+.text-apercupro-black{
+  font-family: "ApercuPro-Black";
+}
+
+.text-apercu-extrabold{
+  font-family: "ExtraBold";
+}
+
+.button-transition {
+  transition: 188ms;
+  transition-timing-function: ease-in-out;
+}
+
+
+.button-passive-transition:hover {
+  background-color: #F7F8FA;
+}
+
+.card-right{
+  margin-top: 20px;
+}
+
+.button-transparent {
+  top: 248px;
+  left: 746px;
+  width: 150px;
+  height: 48px;
+  border: 2px solid var(--unnamed-color-ffffff);
+  background: #80A3B9 0% 0% no-repeat padding-box;
+  border: 2px solid #FFFFFF;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.h1-style {
+  font-weight: 700;
+  font-size: 1.875rem;
+  /* 30px */
+  line-height: 2.25rem;
+  /* 36px */
+  color: rgb(0 0 0);
+}
+
+.h2-style {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.50rem;
+  color: rgb(0 0 0);
+}
+
+.para-style {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: gray;
+}
+
+.h3-style {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgb(0, 0, 0);
+}
+
+.info-style {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: gray;
+}
+
+.smallsize{
+  font-size: 0.650rem;
+  color: gray;
+}
+
+.input-field-style {
+  padding: 4px 11px 4px ;
+  margin: 3px;
+  display: inline-block;
+  border: 1px solid rgba(204, 204, 204, 0.795);
+  border-width: 1.5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid rgba(204, 204, 204, 0.795);
+  border-width: 1.5px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dropdown-style {
+  width: auto;
+  border: #80A3B9;
+  border-width: 1.5px;
+  color: gray;
+}
+
+.dropdown-menu-style {
+  width: 100%;
+  display: block;
+  color: gray;
+}
+
+.gradient-text {
+  font-weight: 700;
+  --tw-gradient-from: #ef4444;
+  --tw-gradient-to: rgb(239 68 68 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.view-container {
+  padding: 10px 40px;
+}
+
+.gold-column {
+  background-color: #FCF6EC;
+  color: rgba(26, 27, 30, 0.6);
+  width: 420px;
+  text-align: start;
+}
+
+.fd-column {
+  background-color: #EDF9FF;
+  color: rgba(26, 27, 30, 0.6);
+  width: 420px;
+  text-align: start;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.c-multi-select-dropdown{
+    font-family: "Light";
+    position:relative;
+    display: inline-block;
+}
+
+.c-multi-select-dropdown__selected {
+  padding:6px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-multi-select-dropdown__option-checkbox {
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.c-multi-select-dropdown__options{
+        display:block;
+        position: absolute;
+        box-sizing: border-box;
+        left:0;
+        width:100%;
+        list-style: none;
+        margin-top: 5px;
+        background-color: white;
+        z-index: 3;
+        padding-left:4px;
+        padding-top: 10px;
+        border:solid 1px gray;
+        border-radius: 5px;
+        padding:5px 0px;
+        align-items: center;
+        padding:6px 10px;
+        cursor:pointer;
+    }
+
+    .modal {
+      position: fixed;
+      left: 0px;
+      top:0px;
+      right: 0px;
+      bottom: 0px;
+      opacity: 1;
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .round2 {
+      
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    .modal-content{
+      width: 850px;
+      background-color: white;
+    }
+ .modal-header, .modal-footer {
+  padding: 10px;
+ }
+.modal-title {
+  margin: 0px;
+}
+
+.modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.rt-input-input {
+  position: relative;
+  display: inline-block;
+}
+
+.rt-input-input::after {
+  content: '%';
+  font-family: sans-serif;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 40%;
+  right:5px;
+  
+  transform: translateY(-50%);
+}
+
+/*Below is the Styling for Bank Popup Progress Bar Animation */
+@keyframes barWidth {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 100%;
+  }
+  75% {
+    width: 50%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes barWidth2 {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.horizontal-bar-wrap {
+  height: 4px;
+  width: 100%;
+}
+.horizontal-bar-wrap .bar {
+  position: relative;
+  width: 0%;
+  height: 100%;
+  margin: 0 auto;
+  animation: barWidth;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.horizontal-bar-wrap .bar.bar1 {
+  animation-delay: 0s;
+  /* background: #4C4ADC; */
+  top: 0;
+  z-index: 1;
+}
+
+.ulClass{
+  display: block;
+  border: 1px solid gray ;
+  border-radius: 0.375rem;
+  padding-left: 5px ;
+  padding-right: 5px ;
+  color:black;
+}
+.liClass{
+  background-color: rgb(179, 255, 218);
+  margin-right: 2%;
+
+}
+.liClass:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5px;
+}
+.after\:top-\[5px\]::after {
+  content: var(--tw-content);
+  top: 2px !important;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.button-passive {
+  background-color: white;
+  box-shadow: 0px 5px 5px #0000000D;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 400;
+  height: 20px;
+  /* color: #1e1d83;
+  border-color: rgb(37, 32, 134); */
+  border-width: 1px;
+  padding:4px;
+}
+
+.button-passive {
+  background-color: white;
+  box-shadow: 0px 5px 5px #0000000D;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 400;
+  height: auto;
+  /* color: #1e1d83;
+  border-color: rgb(37, 32, 134); */
+  border-width: 1px;
+  padding:4px;  
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ul-disc {
+  list-style-type: disc !important;
+  margin-top: 14px;
+  padding-left: 40px;
+}
+
+@layer components {
+  @media ((min-width: 100px) and (max-width:414px)) {
+    .dashboard-button-padding{
+      @apply space-x-2
+    }
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+   
+    .user-journey-back-button{
+      background-color: white;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    padding:3px;
+
+    }
+    .user-journey-footer-styling{
+      @apply fixed bottom-0   bg-white 
+    }
+    .hide-continue-back-btn{
+      @apply flex  justify-between
+    }
+ 
+    .residental-boxsize{
+      @apply p-2 
+    }
+    .corporate-heading-padding{
+      @apply space-x-4
+    }
+    .corporate-plan-text{
+      @apply text-sm mt-5
+    }
+    .marital-status-padding{
+      @apply flex-col space-y-2
+     }
+    .corporate-plan-image{
+      @apply w-20
+    }
+    .sidebarHide{
+      @apply hidden
+    }
+    .componentWidth{
+      @apply w-full
+    }
+    .rating-left-padding{
+      @apply ml-32
+    }
+   .footer-padding{
+    @apply space-x-20
+   }
+  
+    .products-styling{
+      @apply  mr-3
+    }
+    .sb-image-small{
+      @apply hidden
+    }
+    .cardSize{
+      width:auto;
+      height: 150px;
+      margin:10px;
+
+    }
+    .dashboard-payout{
+      @apply  hidden
+    }
+   
+    
+    .addtocompare{
+      margin-left: 4px;
+    }
+   
+   
+    .flexcol{
+      @apply flex-col
+    }
+
+     .tableconversion{
+      @apply flex-col 
+
+     }
+    .fdplancardpadding {
+      @apply  my-2 mt-2 ml-3   p-2
+    }
+    .space-between{
+      @apply pr-8
+    }
+
+    .button-active-dashboard {
+      /* background-color: #3835cf; */
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      opacity: 1;
+      text-align: center;
+      font-weight: 400;
+      width: 100px;
+      height: auto;
+      color: white;
+      padding:4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3;
+    }
+    .button-active-userjourney {
+      /* background-color: #3835cf; */
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      opacity: 1;
+      text-align: center;
+      font-weight: 400;
+      width: 100px;
+      height: auto;
+      color: white;
+      padding:4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+    }
+    .change-to-rating{
+      @apply  hidden
+    }
+
+    .button-passive-dashboard {
+      background-color: white;
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 400;
+      width: 100px;
+      height: auto;
+      color: #1e1d83;
+      border-color: rgb(37, 32, 134);
+      border-width: 1px;
+      padding:4px;
+
+       
+    }
+
+    .button-passive-userjourney {
+      background-color: white;
+      box-shadow: 0px 5px 5px #0000000D;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 400;
+      width: 100px;
+      height: auto;
+      color: #1e1d83;
+      border-color: rgb(37, 32, 134);
+      border-width: 1px;
+      padding:4px;
+
+       
+    }
+    .dropdown-width{
+      width:200px
+    }
+    .dashboard-left-padding{
+      padding-left: 25px;
+       }
+       .dashboard-right-padding{
+         padding-right:25px;
+       }
+       .dashboard-top-padding{
+        padding-top:4px;
+      }
+      .dashboard-bottom-padding{
+        padding-bottom:4px;
+      }
+      .Dashfooter {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 6%;
+        background-color: white;
+        text-align: center;
+        border: #666666;
+        box-shadow: #666666;
+     }
+     .userjourney-Dashfooter {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10%;
+      background-color: white;
+      text-align: center;
+      border: #666666;
+      box-shadow: #666666;
+   }
+  }
+  @media ((min-width: 414px) and (max-width:559px)) {
+    
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+    
+  
+     .marital-status-padding{
+      @apply flex-col space-y-3
+     }
+    .rating-left-padding{
+      padding-left: 150px;
+    }
+    .tableconversion{
+      @apply flex-col
+
+     }
+     .cardSize{
+      width:450px;
+      height: auto;
+    }
+    .dashboard-payout{
+      @apply  hidden
+    }
+    .footer-padding{
+      @apply space-x-56
+     }
+     .change-to-rating{
+      @apply  hidden
+    }
+      .dropdown-width{
+    width:200px
+  }
+  }
+
+  @media ((min-width: 560px) and (max-width:639px)) {
+  
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+    .marital-status-padding{
+      @apply flex-row space-x-4
+    }
+    
+    .tableconversion{
+      @apply flex-row
+
+     }
+     .cardSize{
+      width:515px;
+      height: 160px;
+    }
+    .dashboard-payout{
+      @apply  hidden
+    }
+    .footer-padding{
+      @apply space-x-80
+     }
+     .change-to-payout{
+      @apply hidden
+    }
+  }
+  @media ((min-width: 414px) and (max-width:640px)) {
+    .dashboard-button-padding{
+      @apply space-x-5
+    }
+    .sidebar-padding{
+      @apply p-0.5
+    }
+    .userjourney-buttonpadding{
+      @apply space-x-20
+    }
+
+    .user-journey-back-button{
+      background-color: white;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    padding:3px;
+
+    }
+    .user-journey-footer-styling{
+      @apply fixed bottom-0   bg-white
+    }
+    .residental-boxsize{
+      @apply p-2 
+    }
+    .corporate-heading-padding{
+      @apply space-x-8
+    }
+    .corporate-plan-text{
+      @apply text-sm mt-5
+    }
+    .corporate-plan-image{
+      @apply w-24
+    }
+  .sidebarHide{
+    @apply hidden
+  }
+  .componentWidth{
+    @apply w-full
+  }
+   .compare-logo-padding{
+    @apply mr-1
+   }    
+    .products-styling{
+      @apply  mr-4
+    }
+    .sb-image-small{
+      @apply hidden
+    }
+    
+    .addtocompare{
+      margin-left: 4px;
+    }
+    .flexrow{
+      @apply flex flex-row
+    }
+      
+  
+  .fdplancardpadding {
+    @apply  my-3 mt-5 ml-5 text-sm p-4
+  }
+  .space-between{
+    @apply pr-10
+  }
+  .table-spacing{
+    @apply pl-6
+   }
+
+  .button-active-dashboard {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 100px;
+    height: auto;
+    color: white;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  .button-active-userjourney {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 100px;
+    height: auto;
+    color: white;
+    padding:4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  .card-text{
+    @apply text-sm
+  }
+  .dashboard-title{
+    @apply text-sm
+  }
+  .button-passive-dashboard {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 140px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:5px;
+
+   
+  }
+  .button-passive-userjourney {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 140px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:5px;
+
+   
+  }
+
+  .dashboard-left-padding{
+    padding-left: 25px;
+     }
+     .dashboard-right-padding{
+       padding-right:25px;
+     }
+     .dashboard-top-padding{
+      padding-top:4px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:4px;
+    }
+    .dropdown-right-margin{
+      margin-right: 30px;
+      
+    }
+    .Dashfooter {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 6%;
+      background-color: white;
+      /* color: white; */
+      text-align: center;
+      border: #666666;
+      box-shadow: #666666;
+
+   }
+   .userjourney-Dashfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    text-align: center;
+    border: #666666;
+    box-shadow: #666666;
+
+ }
+
+}
+@media ((min-width: 640px) and (max-width:699px)) {
+  .sidebar-padding{
+    @apply p-0.5 
+  }
+  .cardSize{
+    width:450px;
+    height: 160px;
+  }
+  .dashboard-payout{
+    @apply  hidden
+  }
+  .sidebarHide{
+    @apply hidden
+  }
+  .componentWidth{
+    @apply w-full
+  }
+}
+@media ((min-width: 700px) and (max-width:767px)) {
+  .sidebar-padding{
+    @apply p-1.5
+  }
+  .cardSize{
+    width:auto;
+    height: 170px;
+  }
+  .dashboard-payout{
+    @apply  mb-2
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+}
+@media ((min-width: 640px) and (max-width:767px)) {
+  
+  .dashboard-button-padding{
+    @apply space-x-2
+  }
+ 
+  .userjourney-buttonpadding{
+    @apply space-x-6
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: 40px;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+  }
+  
+  
+  .residental-boxsize{
+    @apply p-3 
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .corporate-plan-text{
+    @apply text-base mt-3
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-4
+  }
+  .corporate-plan-image{
+    @apply w-24
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  .dropdown-inside-padding{
+    @apply ml-2
+  }
+  .dropdown-width{
+    padding-right: 6px;
+  }
+  .sort-padding{
+    @apply right-6
+  }
+  .resetall-padding{
+    @apply right-20
+  }
+  .compare-logo-padding{
+    @apply mr-1
+   }  
+  .compare-noproduct-text{
+    @apply  p-1
+  }
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-48
+   }
+  .dashboard-footer{
+    @apply hidden
+      
+  }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-small{
+    @apply hidden
+  }
+
+  .addtocompare{
+    margin-left: 5px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row my-3 ml-1
+
+   }
+   
+  .fdplancardpadding {
+    @apply  my-4 ml-8  text-sm p-3
+  }
+  .space-between{
+    @apply pr-2
+  }
+  .table-spacing{
+    @apply pl-10
+   }
+
+  .button-active-dashboard {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 100px;
+    height: auto;
+    color: white;
+    padding:3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  .button-active-userjourney {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 135px;
+    height: auto;
+    color: white;
+    padding:3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  .card-text{
+    @apply text-sm
+  }
+  .dashboard-title{
+    @apply text-base
+  }
+  .button-passive-dashboard {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+   
+  }
+  .button-passive-userjourney {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+   
+  }
+  .dashboard-left-padding{
+    padding-left: 35px;
+     }
+     .dashboard-right-padding{
+       padding-right:35px;
+     }
+     .dashboard-top-padding{
+      padding-top:5px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:5px;
+    }
+   
+}
+@media ((min-width: 768px) and (max-width:899px)) {
+
+  .compare-noproduct-text{
+    @apply  p-1
+  }
+  .cardSize{
+    width:580px;
+    height: 17  0px;
+  }
+  .dashboard-payout{
+    @apply  mb-2
+  }
+  .dropdown-right-margin{
+    margin-right: 12px;
+  }
+  .dropdown-inside-padding{
+    @apply ml-2
+  }
+  .dropdown-width{
+    padding-right: 5px;
+  }
+
+}
+@media ((min-width: 900px) and (max-width:1600px)) {
+  
+  .dropdown-inside-padding{
+    @apply ml-9
+  }
+  .compare-noproduct-text{
+    @apply text-sm p-2
+  }
+  .cardSize{
+    width:600px;
+    height: 170px;
+  }
+  .dashboard-payout{
+    @apply  mb-2
+  }
+  .dropdown-right-margin{
+    margin-right: 16px;
+  }
+
+  .dropdown-width{
+    padding-right: 6px;
+  }
+ 
+}
+@media ((min-width: 640px) and (max-width:1600px)) {
+  .cancel-hidden{
+    @apply hidden
+  }
+}
+@media screen and (max-width: 1199px) {
+  .view-container {
+    padding: 24px 16px 24px 16px;
+  }
+}
+@media ((min-width: 768px) and (max-width:1600px)) {
+  .sb-image-large{
+    @apply hidden
+  }
+  .dashboard-button-padding{
+    @apply space-x-10
+  }
+  .sidebar-padding{
+    @apply p-2.5
+  }
+  .userjourney-buttonpadding{
+    @apply space-x-12
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: 40px;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+
+  }
+  
+ 
+  .residental-boxsize{
+    @apply p-4 text-sm
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-4
+  }
+  .corporate-plan-image{
+    @apply w-32
+  }
+  .corporate-plan-text{
+    @apply text-base mt-5
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  
+  .filter-title{
+    @apply text-sm
+  }
+  .sort-padding{
+    @apply right-8
+  }
+  .resetall-padding{
+    @apply right-20
+  }
+  .compare-logo-padding{
+    @apply mr-2
+   }  
+ 
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-48
+   }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .dashboard-footer{
+    @apply hidden
+      
+  }
+  .compare-text{
+    @apply mr-4
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-large{
+    @apply hidden
+  }
+
+  .addtocompare{
+    margin-left: 5px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row
+
+   }
+  
+  .fdplancardpadding {
+    @apply  my-5 ml-10 text-base p-4
+  }
+  .space-between{
+    @apply pr-16
+  }
+  .dashboard-title{
+    @apply text-base
+  }
+  .table-spacing{
+    @apply pl-6 
+   }
+  .button-active-dashboard {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: white;
+    padding:4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+  }
+  .button-active-userjourney {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: auto;
+    color: white;
+    padding:4px;
+
+  }
+  .card-text{
+    @apply text-sm
+  }
+  .button-passive-dashboard {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 160px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:4px;
+
+   
+  }
+  .button-passive-userjourney {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 160px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:4px;
+  }
+
+  .dashboard-left-padding{
+    padding-left: 45px;
+     }
+     .dashboard-right-padding{
+       padding-right:45px;
+     }
+     .dashboard-top-padding{
+      padding-top:7px;
+    }
+    .dashboard-bottom-padding{
+      padding-bottom:7px;
+    }  
+}
+
+@media ( (min-width: 1600px) ){
+  .sb-image-large{
+    @apply hidden
+  }
+  .dashboard-button-padding{
+    @apply space-x-16
+  }
+  .sidebar-padding{
+    @apply p-2
+  }
+  .userjourney-buttonpadding{
+    @apply space-x-6
+  }
+  .user-journey-back-button{
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 130px;
+    height: 45px;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:3px;
+  }
+  
+ 
+  .residental-boxsize{
+    @apply py-4 text-base px-6
+  }
+  .corporate-heading-padding{
+    @apply space-x-12
+  }
+  .marital-status-padding{
+    @apply flex-row space-x-4
+  }
+  .corporate-plan-text{
+    @apply mt-4
+  }
+  .corporate-plan-image{
+    @apply w-36
+  }
+  .componentWidth{
+    @apply w-3/4
+  }
+  .cardSize{
+    width:830px;
+    height: 190px;
+  }
+  .dashboard-payout{
+    @apply  mb-2
+  }
+  .change-to-payout{
+    @apply hidden
+  }
+  .dropdown-inside-padding{
+    @apply ml-9
+  }
+  .dropdown-width{
+    padding-right: 6px;
+  }
+  .filter-title{
+    @apply text-sm
+  }
+  .filter-block{
+    @apply visible
+  }
+  .sort-padding{
+    @apply right-16
+  }
+  .resetall-padding{
+    @apply right-32
+  }
+  .compare-logo-padding{
+    @apply mr-3
+   }  
+  .compare-noproduct-text{
+    @apply text-sm p-2
+  }
+  .compare-text-hide{
+    @apply hidden
+  }
+  .footer-padding{
+    @apply space-x-64
+   }
+  .Dashfooter{
+    @apply hidden
+  }
+  .userjourney-Dashfooter{
+    @apply hidden
+  }
+  .compare-text{
+    @apply mr-6
+  }
+  .products-styling{
+    @apply text-sm mr-5
+  }
+  .sb-image-large{
+    @apply hidden
+  }
+  .addtocompare{
+    margin-left: 6px;
+  }
+  .flexrow{
+    @apply flex flex-row
+  }
+  .tableconversion{
+    @apply flex-row
+
+   }
+  
+  .fdplancardpadding {
+    @apply  my-6 ml-10  p-4
+  }
+
+  .space-between{
+    @apply pr-28
+  }
+
+  .table-spacing{
+   @apply pl-36
+  }
+
+  .button-active-dashboard {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    width: 140px;
+    height: auto;
+    color: white;
+    padding:6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;  
+  }
+  .button-active-userjourney {
+    /* background-color: #3835cf; */
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    opacity: 1;
+    text-align: center;
+    width: 140px;
+    height: auto;
+    color: white;
+    padding:6px;
+
+  
+  }
+  .card-text{
+    @apply text-base
+  }
+  .button-passive-dashboard {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 165px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:6px;
+  }
+  .button-passive-userjourney {
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000000D;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 400;
+    width: 165px;
+    height: auto;
+    color: #1e1d83;
+    border-color: rgb(37, 32, 134);
+    border-width: 1px;
+    padding:6px;
+  }
+  .dropdown-width{
+    padding-right:20px ;
+  }
+  .dashboard-left-padding{
+ padding-left: 55px;
+  }
+  .dashboard-right-padding{
+    padding-right:55px;
+  }
+  .dashboard-top-padding{
+    padding-top:10px;
+  }
+  .dashboard-bottom-padding{
+    padding-bottom:10px;
+  }
+  .dropdown-right-margin{
+    margin-right: 20px;
+  }
+}
+}
+
+.date-input {
+  width: 100% !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.customer-care {
+  width: -webkit-fill-available;
+}
+
+.button-active {
+  /* background-color: #3B39D9; */
+  box-shadow: 0px 5px 5px #0000000D;
+  border-radius: 5px;
+  opacity: 1;
+  text-align: center;
+  color: #FFFFFF;
+  letter-spacing: 0pt;
+  font: normal normal medium 24pt/30pt Apercu Pro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+/* .button-active:hover {
+  background-color: #1a1b1e;
+} */
+
+.accordion-btn-alignment {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+/* Global changes for responsive ui */
+
+@media (min-width: 641px) {
+  .user_journey_container {
+    @apply   rounded-r-lg bg-white rounded-bl-lg;
+  }
+  .fd_details_container {
+    @apply h-fit rounded-r-lg;
+  }
+}
+
+@media (max-width: 768px) { 
+  .user_journey_container {
+    @apply p-6 h-fit rounded-md bg-white;
+  }
+  .fd_details_container {
+    @apply h-fit rounded-md;
+  }
+  .button-active-fd {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 699px) {
+  .fd_container_sm {
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebarContainer {
+    @apply hidden
+  }
+  .view_container_sm {
+    /* padding: 20px 26px 20px 26px; */
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+@media (max-width: 749px) {
+  .bank_table_desktop_view{
+    @apply hidden
+  }
+  .bank_table_mobile_view{
+    @apply flex justify-center
+  }
+}
+
+@media (min-width: 750px) {
+  .bank_table_desktop_view{
+    @apply flex
+  }
+  .bank_table_mobile_view{
+    @apply hidden
+  }
+}

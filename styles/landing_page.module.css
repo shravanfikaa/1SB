@@ -1,0 +1,17 @@
+@media (min-width: 767px) {
+  .details_container {
+    @apply hidden;
+  }
+  .filter_container {
+    @apply visible;
+  }
+}
+    
+@media (max-width: 768px) { 
+  .details_container {
+    @apply visible;
+  }
+  .filter_container {
+    @apply hidden;
+  }
+}

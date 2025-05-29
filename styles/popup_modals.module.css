@@ -1,0 +1,57 @@
+@media  (max-width:639px) {
+    .hdfc_popup_width{
+        @apply w-auto 
+    }
+    .compare_popup_width{
+        @apply w-max mx-3 
+    }
+    .compare_pop_size{
+        @apply   flex justify-center
+      }
+      .mismatch_row_heading{
+        @apply flex flex-col
+      }
+      .cheque_table_mobile_display
+      {
+        @apply flex
+      }
+      .cheque_table_desktop_display
+      {
+        @apply hidden
+      }
+    .change_agent_modal{
+      @apply w-auto 
+    }
+  .product_info {
+    @apply w-[92%]
+  }
+}
+
+@media  (min-width: 640px) {
+    .hdfc_popup_width{
+        @apply w-2/5 
+    }
+    .compare_popup_width{
+        @apply w-2/5
+    }
+    .compare_pop_size{
+        @apply   flex justify-center
+      }
+      .mismatch_row_heading{
+        @apply flex flex-row
+      }
+      .cheque_table_mobile_display
+      {
+        @apply hidden
+      }
+      .cheque_table_desktop_display
+      {
+        @apply flex
+      }
+  .change_agent_modal{
+    @apply w-[70%]
+  }
+  .product_info {
+    @apply w-[92%] 
+  }
+}

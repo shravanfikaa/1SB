@@ -1,0 +1,40 @@
+const deployConfig = require('./deployConfig');
+
+const appConfig = {
+	pennyDropDelay: 30000,
+	pennyDropCounter: 3,
+	appVersion: "1.0.0",
+	environment: process.env.NEXT_PUBLIC_BUILD_ENV || "test",
+	ocrThresholdLimit: 80,
+	nameComparisonLimit: 80,
+	verifyStatusApiHitCount: 4,
+	refreshTokenTimeLowerBound: process.env.NEXT_PUBLIC_TOKEN_LOWER_BOUND || 600000,
+	refreshTokenTimeUpperBound: process.env.NEXT_PUBLIC_TOKEN_UPPER_BOUND || 900000,
+	authTokenExpiryTime: process.env.NEXT_PUBLIC_TOKEN_EXPIRY_TIME || 3000000,
+	customKey: 'demo',
+	envname: process.env.NEXT_PUBLIC_BUILD_ENV || "test",
+	distributorName: process.env.NEXT_PUBLIC_DISTRIBUTOR_NAME || "FIKAA",
+	distributorId: process.env.NEXT_PUBLIC_DISTRIBUTOR_ID || "FIKAA",
+	baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://fd.api.fikaa.in/",
+	xFrameOptions: process.env.NEXT_PUBLIC_XFRAME_OPTIONS || "SAMEORIGIN",
+	xssProtection: process.env.NEXT_PUBLIC_XSS_PROTECTION || "1; mode=block",
+	contentSecurityPolicy: process.env.NEXT_PUBLIC_CONTENT_SECURITY || "script-src 'self' 'unsafe-eval'",
+	contentTypeOptions: process.env.NEXT_PUBLIC_CONTENT_TYPE_OPTIONS || "nosniff",
+	strictTransportSecurity: process.env.NEXT_PUBLIC_STRICT_TRANSPORT_SECURITY || "max-age=31536000; includeSubDomains",
+	gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",
+	redirectionURL: process.env.NEXT_PUBLIC_REDIRECTION_URL || "",
+	redirectionBtns: process.env.NEXT_PUBLIC_REDIRECTION_BTN ? 'true' : 'false',
+	disableRightClick: process.env.NEXT_PUBLIC_DISABLE_RIGHT_CLICK ? 'true' : 'false',
+	cleverTapAccountID: process.env.NEXT_PUBLIC_CLEVERTAP_ACCOUNT_ID || "TEST-9W4-KK8-WZ7Z",
+	eventLogger: process.env.NEXT_PUBLIC_EVENT_LOGGER || "",
+	deploy: deployConfig,
+	headers: {
+		xFrameOptions: process.env.NEXT_PUBLIC_XFRAME_OPTIONS || "SAMEORIGIN",
+		xssProtection: process.env.NEXT_PUBLIC_XSS_PROTECTION || "1; mode=block",
+		contentSecurityPolicy: process.env.NEXT_PUBLIC_CONTENT_SECURITY || "script-src 'self' 'unsafe-eval'",
+		contentTypeOptions: process.env.NEXT_PUBLIC_CONTENT_TYPE_OPTIONS || "nosniff",
+		strictTransportSecurity: process.env.NEXT_PUBLIC_STRICT_TRANSPORT_SECURITY || "max-age=31536000; includeSubDomains",
+	}, 
+};
+
+module.exports = appConfig;

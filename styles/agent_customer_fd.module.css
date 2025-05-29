@@ -1,0 +1,16 @@
+@media (min-width: 1050px) {
+    .card_content {
+        @apply flex-wrap
+    }
+    .card_content_number {
+        @apply flex-wrap
+    }
+}
+@media (min-width: 1049px) {
+    .card_content {
+        @apply w-1/12
+    }
+    .card_content_number {
+        @apply w-1/6
+    }      
+}

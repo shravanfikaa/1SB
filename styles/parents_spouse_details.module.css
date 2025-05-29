@@ -1,0 +1,10 @@
+
+
+@media (max-width: 768px) { 
+  .status_container {
+    @apply flex-col w-full h-fit;
+  }
+  .details_container {
+    @apply w-full;
+  }
+}

@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+ 
+  .address_header_show {
+    @apply hidden;
+  }
+ 
+ 
+}
+  
+@media (max-width: 768px) {
+  .address_header_hide {
+    @apply hidden;
+  }
+  .address_header_show {
+    @apply flex;
+  }
+  .address_details_parent {
+    @apply flex flex-col;
+  }
+  .address_details_container {
+    @apply w-full;
+  }
+}

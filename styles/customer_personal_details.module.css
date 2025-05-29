@@ -1,0 +1,14 @@
+@media (max-width: 991px) {
+  .user_journey_container{
+    padding: 1.5rem !important;
+  }
+}
+
+
+  
+@media (max-width: 768px) { 
+  .details_container {
+    @apply w-full;
+  }
+}  
+  

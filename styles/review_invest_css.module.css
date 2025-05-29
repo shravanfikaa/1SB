@@ -1,0 +1,33 @@
+@media (max-width: 639px) { 
+    .bank_status_position {
+      @apply flex flex-col gap-y-5
+    }
+
+    .basic_detail_status_position {
+        @apply  gap-y-5
+      }
+      .investment_div_width {
+        @apply w-full
+      }
+      .tenure_amount_width {
+        @apply w-full
+      }
+      
+  }
+
+  @media (min-width: 640px) { 
+    .bank_status_position {
+      @apply flex flex-row gap-5 
+    }
+    
+      .investment_section_width {
+        @apply w-full
+      }
+      .investment_div_width {
+        @apply w-full
+      }
+      .tenure_amount_width {
+        @apply w-1/2
+      }
+  }
+  

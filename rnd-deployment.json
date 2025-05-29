@@ -1,0 +1,12 @@
+{
+  "applicationName": "AppECS-fixed-deposit-app-layer-fixed-deposit-frontend-service",
+  "deploymentGroupName": "DgpECS-fixed-deposit-app-layer-fixed-deposit-frontend-service",
+  "revision": {
+    "revisionType": "S3",
+    "s3Location": {
+      "bucket": "gatewatdeployment/appFrontend",
+      "key": "appspec.yaml",
+      "bundleType": "YAML"
+    }
+  }
+}

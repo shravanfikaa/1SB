@@ -1,0 +1,5 @@
+@media  ((min-width: 200px )and (max-width:639px)) {
+    .label_toggle_width{
+        @apply w-full 
+    }
+}

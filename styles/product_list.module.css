@@ -1,0 +1,191 @@
+
+  /* Create four equal columns that floats next to each other */
+  .left_column  {
+    width: 40%;
+    float: left;
+  }
+
+  .right_column  {
+    width: 60%;
+    float: left;
+  }
+  
+  /* Clear floats after the columns */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media (max-width: 600px) {
+    .left_column  {
+      width: 100%;
+    }
+    .right_column  {
+      width: 100%;
+    }
+    .hide_product_list_tooltip{
+        @apply hidden
+      }
+      .display_or_hide_top_right_corner{
+        min-width: 6rem;
+        padding-left: 0.875rem;
+        @apply flex
+      }
+      .col_tenure{
+        width: 60% !important;
+      }
+      .col_rating{
+        display: none;
+      }
+      .display_or_hide_rating{
+        @apply hidden
+      }
+      .header_container {
+        @apply flex-col
+      }
+      .compare_and_buttons{
+        @apply flex-col-reverse
+      }
+      .table_spacing{
+        @apply px-5
+      }
+      .logo_fdname_space{
+        @apply space-x-4
+      }
+      .buttons_gap{
+        @apply gap-3
+      }
+      .table_width_or_justify{
+        @apply justify-between
+      }
+      .filter_description_font{
+        @apply text-xl
+      }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media (max-width: 992px) {
+    .column  {
+      width: 100%;
+    }
+    .left_column  {
+      width: 100%;
+    }
+    .right_column  {
+      width: 100%;
+    }
+      .table_spacing{
+        @apply px-10
+      }
+      .compare_and_buttons{
+        @apply flex-col-reverse
+      }
+      .header_container {
+        @apply flex-col
+      }
+      .table_width_or_justify{
+        @apply justify-between
+      }
+      .col_rating{
+        min-width: 20%;
+      }
+      .col_tenure{
+        width: 40%;
+      }
+      .col_interest{
+        width: 40%;
+        padding-left: 1rem;
+      }
+  }
+  /* @media ((min-width:900px) and (max-width:977px)){
+    .cta_label{
+      min-height: 42px;
+    }
+  } */
+@media ((min-width:900px) and (max-width:1123px)){
+  .hide_product_list_tooltip{
+    @apply hidden
+  }
+}
+  @media (min-width: 600px) {
+    .display_or_hide_top_right_corner{
+        @apply hidden
+      }
+      .display_or_hide_rating{
+        @apply flex
+      }
+      
+      .table_spacing{
+        @apply px-5
+      }
+      .logo_fdname_space{
+        @apply space-x-7
+      }
+      .buttons_gap{
+        @apply gap-5
+      }
+      .table_width_or_justify{
+        @apply justify-between 
+      }
+  }
+ @media ((min-width:800px) and (max-width:850px)){
+  
+  .table_width_or_justify{
+    @apply justify-between w-full
+  }
+ }
+ @media (min-width:768px){
+  .hide_logos_desktop{
+    @apply hidden
+  }
+ }
+ @media (max-width:767px){
+  .hide_logos_desktop{
+    @apply flex
+  }
+  .hide_card_right{
+    @apply hidden
+  }
+  .plan_section_width{
+    @apply w-full
+  }
+  .compare_section_width{
+    @apply hidden
+  }
+  .plan_and_compare_gap{
+    @apply gap-x-0
+  }
+  .hide_compare_card{
+    @apply hidden
+  }
+  .compare_cta{
+    @apply flex;
+  }
+ }
+ @media (min-width:768px){
+  .hide_card_right{
+    @apply w-auto
+  }
+  .plan_section_width{
+    @apply w-3/4
+  }
+  .compare_section_width{
+    @apply w-1/4
+  }
+  .plan_and_compare_gap{
+    @apply gap-x-5;
+    min-height: calc(100vh - 205px);
+  }
+  .filter_description_font{
+    @apply text-3xl
+  }
+  .hide_compare_card{
+    @apply w-[100%]
+  }
+  .compare_cta{
+    @apply hidden
+  }
+ }

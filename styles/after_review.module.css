@@ -1,0 +1,21 @@
+@media (max-width: 749px) {
+  .mobile_view{
+    @apply w-full
+  }
+    .bank_table_desktop_view{
+        @apply hidden
+      }
+      .bank_table_mobile_view{
+        @apply flex justify-center
+      }
+   
+}
+@media (min-width: 750px) {
+    .bank_table_desktop_view{
+        @apply flex
+      }
+      .bank_table_mobile_view{
+        @apply hidden
+      }
+  
+}
