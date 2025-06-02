@@ -15,7 +15,7 @@ const appConfig = {
 	envname: process.env.NEXT_PUBLIC_BUILD_ENV || "test",
 	distributorName: process.env.NEXT_PUBLIC_DISTRIBUTOR_NAME || "FIKAA",
 	distributorId: process.env.NEXT_PUBLIC_DISTRIBUTOR_ID || "FIKAA",
-	baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://fd.api.fikaa.in/",
+	baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://fd.api-dev.fikaa.in/",
 	xFrameOptions: process.env.NEXT_PUBLIC_XFRAME_OPTIONS || "SAMEORIGIN",
 	xssProtection: process.env.NEXT_PUBLIC_XSS_PROTECTION || "1; mode=block",
 	contentSecurityPolicy: process.env.NEXT_PUBLIC_CONTENT_SECURITY || "script-src 'self' 'unsafe-eval'",

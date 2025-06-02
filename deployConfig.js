@@ -1,5 +1,5 @@
 const apiVersion = process.env.NEXT_PUBLIC_API_VERSION || "api/v1";
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://fd.api.fikaa.in/";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://fd.api-dev.fikaa.in/";
 
 module.exports = {
   isSSOAuthEnabled: false,
