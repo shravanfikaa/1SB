@@ -17,7 +17,7 @@ function LoginMenu() {
           className="p-3 shadow-lg rounded-full border-fd-primary border text-black hover:text-gray focus:outline-none"
         >
           <div className="flex flex-row space-x-1">
-            {/* <FaUserAlt className="text-fd-primary" /> */}
+            <FaUserAlt className="text-fd-primary" />
             <IoIosArrowDown className="text-fd-primary" />
           </div>
         </Menu.Button>
@@ -54,8 +54,8 @@ function LoginMenu() {
               : null
           }
           <Menu.Item>
-            <Link href="https://app-uat.fikaa.in/home/mutual_fund">
-              <span onClick={()=>{sessionStorage.setItem("route",window.location.pathname); }} className="block border border-gray-200 rounded-md m-1 p-1 text-xl text-gray-700 cursor-pointer hover:bg-background-secondary hover:text-white">{translate(AGENT.signOut)}</span>
+            <Link href="/logout/logout_view">
+              <span onClick={()=>sessionStorage.setItem("route",window.location.pathname)} className="block border border-gray-200 rounded-md m-1 p-1 text-xl text-gray-700 cursor-pointer hover:bg-background-secondary hover:text-white">{translate(AGENT.signOut)}</span>
             </Link>
           </Menu.Item>
         </Menu.Items>
