@@ -21,6 +21,7 @@ const appConfig = {
 	contentSecurityPolicy: process.env.NEXT_PUBLIC_CONTENT_SECURITY || "script-src 'self' 'unsafe-eval'",
 	contentTypeOptions: process.env.NEXT_PUBLIC_CONTENT_TYPE_OPTIONS || "nosniff",
 	strictTransportSecurity: process.env.NEXT_PUBLIC_STRICT_TRANSPORT_SECURITY || "max-age=31536000; includeSubDomains",
+	redirectionURLFikaa:process.env.NEXT_PUBLIC_REDIRECTION_URL_Fikaa || "https://app-uat.fikaa.in/home/mutual_fund",
 	gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",
 	redirectionURL: process.env.NEXT_PUBLIC_REDIRECTION_URL || "",
 	redirectionBtns: process.env.NEXT_PUBLIC_REDIRECTION_BTN ? 'true' : 'false',

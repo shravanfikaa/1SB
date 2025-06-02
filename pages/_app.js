@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { BiPhoneCall, BiSupport } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
 import { LocalStorageHandler } from "../lib/storage_handler";
-import { getUserType, handleEventLogger, isMobile } from "../lib/util";
+import { getUserType, handleEventLogger,isMobile } from "../lib/util";
 import { GetApiHandler, PostApiHandler, refreshToken } from "./api/apihandler";
 import { GoogleTagManager } from "@next/third-parties/google";
 import appConfig, { refreshTokenTimeLowerBound, refreshTokenTimeUpperBound } from "../app.config";
@@ -223,7 +223,7 @@ function MyApp({ Component, pageProps }) {
     handleEventLogger("dashboard", "buttonClick", "Home_Click", {
       action: "Help",
       Type: action,
-      Platform: isMobile()
+      Platform:isMobile()
     });
   }
 
@@ -267,18 +267,6 @@ function MyApp({ Component, pageProps }) {
       <div className={`min-h-[50pc] page-background`}>
         <Component {...pageProps} />
       </div>
-      <a
-        href="https://app-uat.fikaa.in/home/mutual_fund"
-        className={`fixed bottom-8 left-6 sm:!left-6 sm:!bg-transparent sm:!w-fit flex justify-end items-center gap-2 text-xs sm:text-base ${displaySupport ? 'bg-primary-green right-0 w-full shadow-md' : 'bg-none'
-          }`}
-      >
-        <button
-          className="bg-fd-primary hover:bg-fd-primary/90 focus:outline-none transition-all duration-200 text-white px-3 py-2 rounded-lg shadow-md text-[0.75rem] font-medium"
-        >
-          Back to FIKAA
-        </button>
-      </a>
-
       <div className={`flex justify-end bottom-6 sm:!right-6 fixed bg-none items-center gap-1.5 sm:!w-fit rounded-full p-2 ${displaySupport ? 'bg-primary-green right-0 w-full shadow-md' : 'right-6'} sm:!bg-transparent text-[0.6875rem] sm:text-2xl sm:shadow-none`} >
         {role.toLowerCase() === "user" && <>
           <div className={`w-10 h-10 flex justify-center items-center cursor-pointer rounded-full py-2 shadow-md sm:p-2 bg-white border-primary-green text-white ${displaySupport ? 'pr-0' : 'pr-2'}`}

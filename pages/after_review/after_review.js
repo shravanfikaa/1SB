@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../../styles/after_review.module.css";
+
 import {
   dd_mm_yyyy_hh_mm_ss_colon_format,
 
@@ -138,6 +139,11 @@ function AfterReview() {
           console.log("Error:", err);
         });
     }
+  }
+
+  function handleBackbutton(){
+    const baseUrl = appConfig.redirectionURLFikaa;
+     window.location.href = baseUrl;
   }
 
   useEffect(() => {
@@ -674,9 +680,14 @@ function AfterReview() {
                     <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit">
                       <Link href="/product/product_list">{translate(AFTER_REVIEW.exploreMoreFd)}</Link>
                     </button>
-                    <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleExploreMoreBonds}>
+                    {
+                      appConfig.distributorId=="tipson" ?  <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleExploreMoreBonds}>
                       {translate(AFTER_REVIEW.exploreMoreBonds)}
+                    </button>: <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleBackbutton}>
+                      Back
                     </button>
+                    }
+                   
                   </> : <button
                     className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4"
                     onClick={() => router.push("/my_fds/fd")}

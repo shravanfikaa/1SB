@@ -238,7 +238,74 @@ function NomineeCard({
           const { nominee_address_line1, nominee_address_line2 } = this.parent;
           return (nominee_address_line1?.length || 0) + (nominee_address_line2?.length || 0) >= 15;
         }
-      )
+      ),
+  invester_nominee_name_different: yup.string().test("invester_nominee_name_different",
+  translate(VALIDATION_CONSTANT.nomineeAndInvesterNameShouldNotMatch),
+ function () {
+    if (manufacturerId?.toLowerCase() !== "unity") return true;
+
+    const { nominee_first_name, nominee_middle_name, nominee_last_name} = this.parent;
+    let userInfo={};
+    if (sessionStorage.getItem("userInfo")) {
+       userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    }
+   let nomineeFull ="";
+    let investerFull = "";
+
+    if(nominee_middle_name === undefined || nominee_middle_name === ''){
+        nomineeFull = `${nominee_first_name}${nominee_last_name}`.toLowerCase().replace(/\s/g, "");
+        let user = userInfo.customer_name.split(" ");
+
+  // Remove the second part of the name (middle name or second name)
+         user.splice(1, 1);
+
+  // Join the remaining parts of the name and make it lowercase, then remove spaces
+    investerFull = user.join('').toLowerCase().replace(/\s/g, "");
+      
+    }
+    else{
+          nomineeFull = `${nominee_first_name}${nominee_middle_name}${nominee_last_name}`.toLowerCase().replace(/\s/g, "");
+   
+          investerFull = `${userInfo.customer_name}`.toLowerCase().replace(/\s/g, "");
+    }
+   
+
+    return nomineeFull !== investerFull;
+  }
+),    
+  guardian_nominee_name_different: yup.string().test("guardian-nominee-name-different",
+  translate(VALIDATION_CONSTANT.nomineeAndGuardianNameShouldNotMatch),
+  function () {
+    if (manufacturerId?.toLowerCase() !== "unity") return true;
+     let userInfo={};
+    if (sessionStorage.getItem("userInfo")) {
+       userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    }
+
+    const { nominee_first_name, nominee_middle_name, nominee_last_name, nominee_guardian_first_name, nominee_guardian_middle_name = "", nominee_guardian_last_name } = this.parent;
+     
+       let nomineeFull ="";
+       let guardianFull = "";
+
+    if(nominee_middle_name === undefined || nominee_middle_name === "" ){
+        nomineeFull = `${nominee_first_name}${nominee_last_name}`.toLowerCase().replace(/\s/g, "");
+        let user = userInfo.customer_name.split(" ");
+
+  // Remove the second part of the name (middle name or second name)
+         user.splice(1, 1);
+
+  // Join the remaining parts of the name and make it lowercase, then remove spaces
+     guardianFull = `${nominee_guardian_first_name}${nominee_guardian_last_name}`.toLowerCase().replace(/\s/g, "");
+      
+    }
+    else{
+          nomineeFull = `${nominee_first_name}${nominee_middle_name}${nominee_last_name}`.toLowerCase().replace(/\s/g, "");
+   
+         guardianFull = `${nominee_guardian_first_name}${nominee_guardian_middle_name}${nominee_guardian_last_name}`.toLowerCase().replace(/\s/g, "");
+    }
+    return nomineeFull !== guardianFull;
+  }
+)
   });
 
   const formik = useFormik({
@@ -520,6 +587,11 @@ function NomineeCard({
                 {errors.nominee_middle_name}
               </div>
             ) : null}
+            {errors.invester_nominee_name_different ? (
+              <div className="text-base text-light-red">
+                {errors.invester_nominee_name_different}
+              </div>
+            ) : null}
             {errors.nominee_last_name ? (
               <div className="text-base text-light-red">
                 {errors.nominee_last_name}
@@ -743,6 +815,12 @@ function NomineeCard({
                     placeholder={`/ ${translate(AGENT.lastName)} *`}
                   />
                 </label>
+                   
+                   {errors.guardian_nominee_name_different ? (
+              <div className="text-base text-light-red">
+                {errors.guardian_nominee_name_different}
+              </div>
+            ) : null}
                 {errors.nominee_guardian_first_name ? (
                   <div className="text-base text-light-red">
                     {errors.nominee_guardian_first_name}

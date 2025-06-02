@@ -6,7 +6,7 @@ import Login from "../login/hdfc_login";
 import LoginMenu from "./login_menu";
 import { featureFlagApi } from "../../lib/application_setup";
 import appConfig from "../../app.config";
-import { getRedirectionURL, getUserRole, handleEventLogger, isMobile } from "../../lib/util";
+import { getRedirectionURL, getUserRole, handleEventLogger,isMobile } from "../../lib/util";
 import { AiTwotoneHome } from "react-icons/ai";
 import { useRouter } from "next/router";
 import { COMMON_CONSTANTS, imageURL, LOGIN_LOGOUT, } from "../../constants";
@@ -40,11 +40,11 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
   }
 
   const handleLoginBtnClick = () => {
-    handleEventLogger("dashboard", "buttonClick", "Login_Click", {
-      action: "Login_Initiate",
-      Initiation_Page: "Post_Declaration",
+    handleEventLogger("dashboard", "buttonClick","Login_Click" , {
+      action:"Login_Initiate",
+      Initiation_Page:"Post_Declaration",
       Screen_Name: "Login page",
-      Platform: isMobile()
+      Platform:isMobile()
     });
     setShowModal(true);
   }
@@ -52,7 +52,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
   const handleHomeBtnClick = () => {
     handleEventLogger("dashboard", "buttonClick", "Home_Click", {
       action: "Reset_All",
-      Platform: isMobile()
+      Platform:isMobile()
     });
     router.push("/product/product_list");
   }
@@ -115,8 +115,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
     const redirectionURL = getRedirectionURL();
     if (redirectionURL) {
       sessionStorage.clear();
-      // window.location.href = redirectionURL;
-      window.location.href = "https://app-uat.fikaa.in/home/mutual_fund";
+      window.location.href = redirectionURL;
     }
   }
 
@@ -159,12 +158,12 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
                 <div className="flex gap-2">
                   <Link href="/faqs">
                     <div className="text-black text-2xl flex items-center gap-2">
-                      <FaQuestion className='text-fd-primary cursor-pointer' />
+                    <FaQuestion className='text-fd-primary cursor-pointer' />
                       <div className="text-black cursor-pointer hidden sm:block">{translate(COMMON_CONSTANTS.faqs)}</div>
                     </div>
                   </Link>
                 </div >
-                <div className={`flex gap-2 ${distributorId?.toLowerCase() === 'northarc' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`} onClick={handleHomeBtnClick}>
+                <div  className={`flex gap-2 ${distributorId?.toLowerCase() === 'northarc' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`} onClick={handleHomeBtnClick}>
                   <div className="text-black text-2xl flex items-center gap-2">
                     <AiTwotoneHome className='text-fd-primary cursor-pointer' />
                     <div className="text-black cursor-pointer hidden sm:block">{translate(LOGIN_LOGOUT.home)}</div>
@@ -203,7 +202,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
           />
         }
       </div >
-
+     
     </>
   );
 }

@@ -16,6 +16,7 @@ import { COMMON_CONSTANTS, PARENT_DETAILS_PAYMENT } from "../../constants";
 
 
 
+
 const issuerName = [];
 let arrayIssuerName = [];
 let arrayCreditRating = [];
@@ -557,9 +558,11 @@ function Filter({ screenType }) {
           </div>
         </div>
       </div>
-      <div className="text-thicccboi-bold leading-4 text-black mt-5">
+      <div>
+        <div className="text-thicccboi-bold leading-4 text-black mt-5">
             {translate(PARENT_DETAILS_PAYMENT.showing)} <span className="text-fd-primary">{totalPlans}</span> {translate(PARENT_DETAILS_PAYMENT.plansChooseFd)}
           </div>
+      </div>
       <FDplans trailArray={trailArray} productData={productData} isAPIDataLoaded={isAPIDataLoaded} screenType={screenType} />
     </div >
     
