@@ -10,10 +10,13 @@ function DetailedFD() {
 
   return (
     <div>
+      
+
       <script
         src="https://kit.fontawesome.com/a59b9b09ab.js"
         crossorigin="anonymous"
       ></script>
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
       <link rel="stylesheet" href="style.css" />
       <NavBarMain />
       <div className="view-container view_container_sm page-background ">

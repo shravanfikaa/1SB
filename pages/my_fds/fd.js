@@ -1075,7 +1075,7 @@ function AllFds() {
                                 </>
                               ) : null}
 
-                              {item.auto_renewal_flag ? (
+                              {/* {item.auto_renewal_flag ? (
                                 <button
                                   className="text-regular text-xl text-white button-active btn-gradient w-auto h-fit p-1 hover:bg-hover-primary hover:border-hover-primary"
                                   onClick={() => {
@@ -1085,7 +1085,7 @@ function AllFds() {
                                 >
                                   {translate(AGENT.renew)}
                                 </button>
-                              ) : null}
+                              ) : null} */}
                               <div className="flex gap-5">
                                 <div><p className="text-medium text-xl text-black text-light-gray">
                                   {translate(AGENT.fdStatus)}
