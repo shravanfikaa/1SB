@@ -29,7 +29,6 @@ export const PERSONAL_DETAILS = {
   infoHeaderDigiLocker: `Enter your PAN and Date of Birth to fetch your KYC record from DigiLocker`,
   taxResidency: `Tax Residency - Are you a citizen national or tax resident of any other country outside India`,
   nriErrorMsg: "We cannot proceed to book an online deposit for a citizen/resident of another country other than India.",
-  nriLicErrorMsg: "This facility is available only for Resident Indian Citizens, for all other categories, please contact your Relationship Manager or visit/contact our nearest branch office.",
   taxResidencyErrorMsg: "We cannot proceed to book an online deposit for a Tax residency of another country other than India.",
   panDetailsMissMatch: "Given PAN details does not match with the existing saved record Please go back and try again",
   amlCheckErrorMsg: "Unfortunately, you can not proceed with your FD booking journey, kindly speak to your relationship manager for more details",
@@ -188,14 +187,6 @@ export const PNB_MATURITY_INSTRUCTION = {
   renewPrincipal: "Renew Principal",
   renewPrincipalAndInterest: "Renew Principal & Interest",
 }
-
-export const LIC_MATURITY_INSTRUCTION = {
-  autoRedeem: "Renew Principal and Interest on Maturity",
-  renewPrincipal: "Renew Principal on Maturity",
-  renewPrincipalAndInterest: "Repay, in entirety, the Principal and Interest on Maturity",
-}
-
-
 
 export const ROWS_PER_PAGE_ARRAY = [10, 20, 30, 50, 100];
 
@@ -379,9 +370,7 @@ export const VALIDATION_CONSTANT = {
   validSpouseMiddleName: "Please enter a valid spouse middle name",
   validSpouseLastName: "Please enter a valid spouse last name",
   validFatherLastName: "Please enter a valid father's last name",
-  validMotherLastName: "Please enter a valid mother's last name",
-  nomineeAndGuardianNameShouldNotMatch:"Nominee name cannot be the same as the guardian name. Please enter a valid nominee.",
-  nomineeAndInvesterNameShouldNotMatch: "Nominee name cannot be the same as the investor’s name. Please enter a valid nominee."
+  validMotherLastName: "Please enter a valid mother's last name"
 
 
 
@@ -479,8 +468,7 @@ export const COMMON_CONSTANTS = {
   SpouseName: "Spouse Name",
   maturityAmount: "Maturity Amount",
   tenure: "Tenure",
-  yieldRate:"Effective Yield",
-  interestRate: "Intrest Rate",
+  interestRate: "Interest Rate",
   interestRatePA: "Interest Rate (% p.a.)",
   year: "year",
   years: "years",

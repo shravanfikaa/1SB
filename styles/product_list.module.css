@@ -6,11 +6,16 @@
   }
 
   .right_column  {
-    width: 100%;
+    width: 60%;
     float: left;
   }
   
-
+  /* Clear floats after the columns */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   
   
   /* Responsive layout - makes a two column-layout instead of four columns */
@@ -164,7 +169,9 @@
   .hide_card_right{
     @apply w-auto
   }
- 
+  .plan_section_width{
+    @apply w-3/4
+  }
   .compare_section_width{
     @apply w-1/4
   }

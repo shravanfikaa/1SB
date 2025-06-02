@@ -697,10 +697,9 @@ function CustomerPersonalDetails(props) {
   }
 
   const handleResidentialStatusChange = (status) => {
-
     setFieldValue("residentialStatus", status);
     if (status.includes("NRI")) {
-      toggleNriModal({ show: true, message: PERSONAL_DETAILS.nriLicErrorMsg });
+      toggleNriModal({ show: true, message: PERSONAL_DETAILS.nriErrorMsg });
     }
   };
   const generateFDApplicationNum = () => {

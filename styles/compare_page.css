@@ -97,7 +97,7 @@
 
 .button-passive {
   /* background-color: white; */
- 
+  box-shadow: 0px 5px 5px #0000000d;
   border-radius: 5px;
   text-align: center;
   font-weight: 400;
@@ -121,7 +121,7 @@
 }
 .button-active{
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   text-transform: uppercase;
 }
 .c-multi-select-dropdown__option:hover .hoveritems{
@@ -133,9 +133,9 @@
   border-radius: 8px;
   text-transform: uppercase;
 }
-/* .button-active:hover{
+.button-active:hover{
   box-shadow: 0 14px 10px -4px rgb(71 191 220 / 40%);
-} */
+}
 .font-normal {
   font-weight: 400 !important;
 }
@@ -384,11 +384,11 @@ button[disabled] {
 
 @layer components {
   .btn-gradient {
-    /* @apply bg-gradient-to-r from-brand-start to-brand-end text-white !important; */
-    /* background-image:
-    linear-gradient(-6deg,theme('colors.brand-end') 10%,theme('colors.brand-start') 140%); */
+    @apply bg-gradient-to-r from-brand-start to-brand-end text-white !important;
+    background-image:
+    linear-gradient(-6deg,theme('colors.brand-end') 10%,theme('colors.brand-start') 140%);
     border: none !important;
-    background-image: linear-gradient(-6deg , theme('colors.brand-end') 10%,theme('colors.brand-start') 140%)
+    
   }
   .page-background {
     @apply bg-gradient-to-r from-brand-start to-brand-end text-white;
@@ -766,46 +766,4 @@ input:-internal-autofill-selected{
 } */
 svg.close-button{
   color: black;
-}.grid-card{
-  border-radius: 18px;
-}
-.grid-card-footer{
-  border-radius: 0 0 18px 18px;
-}
-.grid-card-header {
-    background-image: url(https://altifi.ai/bond-card-pattern-bg.4e1c9ecbdf50b934.svg), 
-    linear-gradient(-138deg, rgba(222, 228, 255, .7), rgba(190, 198, 236, .84));
-    background-repeat: no-repeat;
-    background-position: right top;
-  
-    border-radius: 18px 18px 0 0;
-    position: relative;
-}
-.grid-card-body{
-     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 8px 5px 13px;
-    background: #ffffff;
-    box-shadow: 0 15px 15px -6px #0000001a;
-}
-.grid-card-body::before{
-  content: "";
-    width: 1px;
-    height: calc(100% - 36px);
-    display: inline-block;
-    background: rgba(31, 136, 174, .1);
-    position: absolute;
-    left: 50%;
-    top: 18px;
-    z-index: 2;
-}
-.grid-card-body::after{
-content: "";
-    position: absolute;
-    width: calc(100% - 50px);
-    height: 1px;
-    left: 25px;
-    top: 40%;
-    background: rgba(31, 136, 174, .1);
 }

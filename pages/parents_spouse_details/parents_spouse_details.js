@@ -29,8 +29,6 @@ function ParentsSpouseDetails(props) {
     spouseLastName: false,
   });
   const [selectedManufactureId, setSelectedManufactureId] = useState("");
-  const [selectedUserId,setSelectedUserId]= useState("");
-   const [familyDetails,setFamilyDetails]= useState("");
   const { distributorId } = appConfig;
   const { t: translate } = useTranslation();
 
@@ -188,32 +186,8 @@ function ParentsSpouseDetails(props) {
   }, [parentSpouseData]);
 
   useEffect(() => {
-    if (familyDetails && selectedUserId) {
-      console.log("famili",familyDetails)
-      const investorDetails = familyDetails?.payload?.investorDetails.filter((investor) => investor.userId == Number(selectedUserId));
-      if (investorDetails.length) {
-        const { fatherFirstName, fatherLastName, fatherMiddleName, motherFirstName,motherLastName,motherMiddleName,spouseFirstName,spouseLastName,spouseMiddleName } = investorDetails[0].parentsSpouseDetail;
-        console.log("customerPan", fatherFirstName, fatherLastName, fatherMiddleName, motherFirstName,motherLastName,motherMiddleName,spouseFirstName,spouseLastName,spouseMiddleName)
-        fatherFirstName ? setFieldValue('fatherFirstName', fatherFirstName) : setFieldValue('fatherFirstName', "");
-        fatherLastName ? setFieldValue('fatherLastName', fatherLastName) : setFieldValue('fatherLastName', "");
-        fatherMiddleName ? setFieldValue('fatherMiddleName', fatherMiddleName) : setFieldValue('fatherMiddleName', "");
-        motherFirstName ? setFieldValue('motherFirstName', motherFirstName) : setFieldValue('motherFirstName', "");
-        motherLastName ? setFieldValue('motherLastName', motherLastName) : setFieldValue('motherLastName', "");
-        motherMiddleName ? setFieldValue('motherMiddleName', motherMiddleName) : setFieldValue('motherMiddleName', "");
-        spouseFirstName ? setFieldValue('spouseFirstName', spouseFirstName) : setFieldValue('spouseFirstName', "");
-        spouseLastName ? setFieldValue('spouseLastName', spouseLastName) : setFieldValue('spouseLastName', "");
-        spouseMiddleName ? setFieldValue('spouseMiddleName', spouseMiddleName) : setFieldValue('spouseMiddleName', ""); 
-      }
-    }
-  }, [selectedUserId]);
-  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     if (typeof window !== 'undefined') {
-      if(sessionStorage.getItem("selectedUserId")){
-           setSelectedUserId(sessionStorage.getItem("selectedUserId"));
-         setFamilyDetails(JSON.parse(sessionStorage.getItem("familyDetails")))
-
-      }
       const selectedManufactureId = sessionStorage.getItem("selectedManufactureId");
       setSelectedManufactureId(selectedManufactureId);
       const productIdLocal = sessionStorage.getItem("selectedProductId");

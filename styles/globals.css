@@ -434,7 +434,7 @@ button[disabled]{
 }
 .button-passive {
   background-color: white;
- 
+  box-shadow: 0px 5px 5px #0000000D;
   border-radius: 5px;
   text-align: center;
   font-weight: 400;
@@ -447,7 +447,7 @@ button[disabled]{
 
 .button-passive {
   background-color: white;
- 
+  box-shadow: 0px 5px 5px #0000000D;
   border-radius: 5px;
   text-align: center;
   font-weight: 400;
@@ -572,7 +572,7 @@ button[disabled]{
 
     .button-active-dashboard {
       /* background-color: #3835cf; */
-     
+      box-shadow: 0px 5px 5px #0000000D;
       border-radius: 5px;
       opacity: 1;
       text-align: center;
@@ -588,7 +588,7 @@ button[disabled]{
     }
     .button-active-userjourney {
       /* background-color: #3835cf; */
-     
+      box-shadow: 0px 5px 5px #0000000D;
       border-radius: 5px;
       opacity: 1;
       text-align: center;
@@ -608,7 +608,7 @@ button[disabled]{
 
     .button-passive-dashboard {
       background-color: white;
-     
+      box-shadow: 0px 5px 5px #0000000D;
       border-radius: 5px;
       text-align: center;
       font-weight: 400;
@@ -624,7 +624,7 @@ button[disabled]{
 
     .button-passive-userjourney {
       background-color: white;
-     
+      box-shadow: 0px 5px 5px #0000000D;
       border-radius: 5px;
       text-align: center;
       font-weight: 400;
@@ -808,7 +808,7 @@ button[disabled]{
 
   .button-active-dashboard {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -824,7 +824,7 @@ button[disabled]{
   }
   .button-active-userjourney {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -846,7 +846,7 @@ button[disabled]{
   }
   .button-passive-dashboard {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -861,7 +861,7 @@ button[disabled]{
   }
   .button-passive-userjourney {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -962,7 +962,7 @@ button[disabled]{
   }
   .user-journey-back-button{
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1058,7 +1058,7 @@ button[disabled]{
 
   .button-active-dashboard {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1074,7 +1074,7 @@ button[disabled]{
   }
   .button-active-userjourney {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1096,7 +1096,7 @@ button[disabled]{
   }
   .button-passive-dashboard {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1111,7 +1111,7 @@ button[disabled]{
   }
   .button-passive-userjourney {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1210,7 +1210,7 @@ button[disabled]{
   }
   .user-journey-back-button{
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1310,7 +1310,7 @@ button[disabled]{
    }
   .button-active-dashboard {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1326,7 +1326,7 @@ button[disabled]{
   }
   .button-active-userjourney {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1342,7 +1342,7 @@ button[disabled]{
   }
   .button-passive-dashboard {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1357,7 +1357,7 @@ button[disabled]{
   }
   .button-passive-userjourney {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1398,7 +1398,7 @@ button[disabled]{
   }
   .user-journey-back-button{
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1509,7 +1509,7 @@ button[disabled]{
 
   .button-active-dashboard {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1524,7 +1524,7 @@ button[disabled]{
   }
   .button-active-userjourney {
     /* background-color: #3835cf; */
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     opacity: 1;
     text-align: center;
@@ -1540,7 +1540,7 @@ button[disabled]{
   }
   .button-passive-dashboard {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1553,7 +1553,7 @@ button[disabled]{
   }
   .button-passive-userjourney {
     background-color: white;
-   
+    box-shadow: 0px 5px 5px #0000000D;
     border-radius: 5px;
     text-align: center;
     font-weight: 400;
@@ -1599,7 +1599,7 @@ button[disabled]{
 
 .button-active {
   /* background-color: #3B39D9; */
- 
+  box-shadow: 0px 5px 5px #0000000D;
   border-radius: 5px;
   opacity: 1;
   text-align: center;

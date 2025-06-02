@@ -92,7 +92,6 @@ function FDProductInfo({ productInfo, isOnboardingUser }) {
   const [minAmount, setMinAmount] = useState();
   const [maxAmount, setMaxAmount] = useState();
   const [tenureMaxRange, setTenureMaxRange] = useState(5);
-  const [yieldRate,setYieldRate] = useState();
   const { t: translate } = useTranslation();
 
   const getJourneyType = () => {
@@ -265,7 +264,6 @@ function FDProductInfo({ productInfo, isOnboardingUser }) {
       PostApiHandler(url, "POST", requestBody)
         .then((response) => {
           setFDCalculatorResult(response.data.data);
-          setYieldRate(response?.data?.data?.yieldRate)
         })
         .catch((err) => {
           console.log("Got Error while calling FD calculator:", err);
@@ -1492,14 +1490,6 @@ function FDProductInfo({ productInfo, isOnboardingUser }) {
                           ({Object.keys(fdCalculatorResult).length ? fdCalculatorResult.interestRate + "%" : "6%"}{" "} {translate(DETAIL_FD.pa)})
                         </span>
                       </div>
-                       {yieldRate ? <div className="flex justify-start flex flex-col text-medium">
-                        <span className="text-xs text-black flex justify-start text-apercu mb-2">
-                          {translate(COMMON_CONSTANTS.yieldRate)}
-                        </span>
-                        <span className="text-xs text-black">
-                          ({Math.floor(yieldRate * 100) / 100 + "%"})
-                        </span>
-                      </div> : null}
                       {selectedProduct?.toLowerCase().includes("non") ? (
                         <div className="flex">
                           <div>
@@ -1510,7 +1500,13 @@ function FDProductInfo({ productInfo, isOnboardingUser }) {
                               className="text-regular text-xl text-light-gray text-black border border-gray-300 shadow bg-white p-1 w-full rounded mb-"
                               aria-label="Default select example"
                               onChange={(e) => setPayoutMethod(e.target.value)}
-                            >{fdDetails["fdPayoutMethod"]?.map((paymode)=>(<option value={paymode}>{translate(paymode)}</option>))}
+                            >
+                              <option value="monthly">{translate(COMMON_CONSTANTS.monthly)}</option>
+                              <option value="quarterly">{translate(COMMON_CONSTANTS.quarterly)}</option>
+                              <option value="half-yearly">{translate(COMMON_CONSTANTS.halfYearly)}</option>
+                              <option value="yearly" selected>
+                                {translate(COMMON_CONSTANTS.yearly)}
+                              </option>
                             </select>
                           </div>
                         </div>

@@ -17,7 +17,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import InterestRateModal from "./investmentInterestRateModal";
 import { useFormik } from "formik";
 import * as yup from 'yup';
-import { ADDRESS_DETAILS, COMMON_CONSTANTS, FD_RENEWAL, INVESTMENT_DETAILS, MATURITY_INSTRUCTION, AFTER_REVIEW, INVESTMENT, DETAIL_FD, PNB_MATURITY_INSTRUCTION, COMPONENTS,UNITY_MATURITY_INSTRUCTION,LIC_MATURITY_INSTRUCTION } from "../../constants";
+import { ADDRESS_DETAILS, COMMON_CONSTANTS, FD_RENEWAL, INVESTMENT_DETAILS, MATURITY_INSTRUCTION, AFTER_REVIEW, INVESTMENT, DETAIL_FD, PNB_MATURITY_INSTRUCTION, COMPONENTS,UNITY_MATURITY_INSTRUCTION } from "../../constants";
 import investmentdetailcss from "../../styles/investment_details.module.css"
 import { BottomSheet } from 'react-spring-bottom-sheet';
 import 'react-spring-bottom-sheet/dist/style.css';
@@ -146,10 +146,6 @@ function InvestmentDetails(props) {
     else if(selectedManufactureId?.toUpperCase() === "UNITY"){
       setMaturityInstruction(UNITY_MATURITY_INSTRUCTION);
     }
-    else if(selectedManufactureId?.toUpperCase() === "LICHFL")
-    {
-        setMaturityInstruction(LIC_MATURITY_INSTRUCTION)
-    }  
   }, [selectedManufactureId]);
 
   useEffect(() => {
@@ -1249,7 +1245,7 @@ function InvestmentDetails(props) {
                 {userType === 'user' &&
                   <>
                     {
-                      selectedManufactureId?.toUpperCase() !== "PNBHFC" && selectedManufactureId?.toUpperCase() !== "UNITY" && selectedManufactureId?.toUpperCase() !== "LICHFL" ?
+                      selectedManufactureId?.toUpperCase() !== "PNBHFC" && selectedManufactureId?.toUpperCase() !== "UNITY" ?
                         <div className="mb-5 flex flex-col">
                           <div className="text-regular text-4xl text-light-gray mb-2">
                             {translate(FD_RENEWAL.form15G)}

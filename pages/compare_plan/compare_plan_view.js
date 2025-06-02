@@ -173,7 +173,7 @@ function Compare() {
                 </tr>
                 {
                   urlData?.screenType === "dashboard" || userType === "user" ? <tr className="">
-                    <td id="sideBar" className="text-bold text-4xl sidebar-section py-2 text-black">{translate(COMMON_CONSTANTS.overview)}</td>
+                    <td id="sideBar" className="text-bold text-4xl sidebar-section py-2">{translate(COMMON_CONSTANTS.overview)}</td>
                     <td id="contentArea" className="main-compare-card">
                       {data.map((api) => {
                         return (
