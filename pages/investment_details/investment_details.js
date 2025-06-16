@@ -7,7 +7,7 @@ import Image from "next/image";
 import {
   displayINRAmount,
   formatDate, getFullName, extractedMaturityInstructionValue,
-  handleEventLogger, getUserType, numberInput, dd_mm_yyyy_format,isMobile, getFinancialYear
+  handleEventLogger, getUserType, numberInput, dd_mm_yyyy_format, isMobile, getFinancialYear
 } from "../../lib/util";
 import ErrorModal from "../common/errorPopup";
 import { getProductId } from "../../lib/review_utils";
@@ -17,17 +17,18 @@ import "react-loading-skeleton/dist/skeleton.css";
 import InterestRateModal from "./investmentInterestRateModal";
 import { useFormik } from "formik";
 import * as yup from 'yup';
-import { ADDRESS_DETAILS, COMMON_CONSTANTS, FD_RENEWAL, INVESTMENT_DETAILS, MATURITY_INSTRUCTION, AFTER_REVIEW, INVESTMENT, DETAIL_FD, PNB_MATURITY_INSTRUCTION, COMPONENTS,UNITY_MATURITY_INSTRUCTION,LIC_MATURITY_INSTRUCTION } from "../../constants";
+import { ADDRESS_DETAILS, COMMON_CONSTANTS, FD_RENEWAL, INVESTMENT_DETAILS, MATURITY_INSTRUCTION, AFTER_REVIEW, INVESTMENT, DETAIL_FD, PNB_MATURITY_INSTRUCTION, COMPONENTS, UNITY_MATURITY_INSTRUCTION, LIC_MATURITY_INSTRUCTION } from "../../constants";
 import investmentdetailcss from "../../styles/investment_details.module.css"
 import { BottomSheet } from 'react-spring-bottom-sheet';
 import 'react-spring-bottom-sheet/dist/style.css';
 import { IoIosArrowUp } from "react-icons/io";
 import { AiOutlineClose } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
+import TenureSelect from "../common/SearchSelect";
 
 function InvestmentDetails(props) {
   const [tenureMasterDetails, setTenureMasterDetails] = useState({});
-  const [userAge,setUserAge] = useState();
+  const [userAge, setUserAge] = useState();
   const [productDetails, setProductDetails] = useState({})
   const [depositAmountDropdown, setDepositAmountDropdown] = useState([]);
   const [interestRates, setInterestRates] = useState();
@@ -113,7 +114,7 @@ function InvestmentDetails(props) {
     if (productIdLocal && sessionStorage[productIdLocal]) {
       const productData = JSON.parse(sessionStorage[productIdLocal]);
       const { CkycApiData, basic_details } = productData;
-      
+
       if (CkycApiData) {
         const { "PERSONAL DETAILS": details, } = CkycApiData;
         if (details?.dateOfBirth) {
@@ -125,16 +126,16 @@ function InvestmentDetails(props) {
           personalData.gender = basic_details?.gender || "";
         }
       }
-      if(userType==="rm" || userType==="admin"){
-        if(sessionStorage.getItem("rm_customer_data")){
+      if (userType === "rm" || userType === "admin") {
+        if (sessionStorage.getItem("rm_customer_data")) {
           const rmCustomerData = JSON.parse(sessionStorage.getItem('rm_customer_data'));
-          const { gender,date_of_birth } = rmCustomerData;
-          personalData.gender =gender
-          personalData.dob=date_of_birth
+          const { gender, date_of_birth } = rmCustomerData;
+          personalData.gender = gender
+          personalData.dob = date_of_birth
         }
       }
-        
-      
+
+
       setPersonalData(personalData);
     }
   }
@@ -143,13 +144,12 @@ function InvestmentDetails(props) {
     if (selectedManufactureId?.toUpperCase() === "PNBHFC") {
       setMaturityInstruction(PNB_MATURITY_INSTRUCTION);
     }
-    else if(selectedManufactureId?.toUpperCase() === "UNITY"){
+    else if (selectedManufactureId?.toUpperCase() === "UNITY") {
       setMaturityInstruction(UNITY_MATURITY_INSTRUCTION);
     }
-    else if(selectedManufactureId?.toUpperCase() === "LICHFL")
-    {
-        setMaturityInstruction(LIC_MATURITY_INSTRUCTION)
-    }  
+    else if (selectedManufactureId?.toUpperCase() === "LICHFL") {
+      setMaturityInstruction(LIC_MATURITY_INSTRUCTION)
+    }
   }, [selectedManufactureId]);
 
   useEffect(() => {
@@ -306,8 +306,8 @@ function InvestmentDetails(props) {
       'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen',
     ];
     const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-  
-    function numToWords(n){
+
+    function numToWords(n) {
       if (n < 20) return a[n];
       if (n < 100) return b[Math.floor(n / 10)] + (n % 10 ? ' ' + a[n % 10] : '');
       if (n < 1000)
@@ -318,13 +318,13 @@ function InvestmentDetails(props) {
         return numToWords(Math.floor(n / 100000)) + ' Lakh' + (n % 100000 ? ' ' + numToWords(n % 100000) : '');
       return numToWords(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 ? ' ' + numToWords(n % 10000000) : '');
     }
-  
+
     const [rupees, paise] = Number(amount)?.toFixed(2).split('.').map(Number);
     let result = '';
-  
+
     if (rupees) result += numToWords(rupees) + ' Rupees';
     if (paise) result += ' and ' + numToWords(paise) + ' Paise';
-  
+
     return result ? result.trim() + ' Only' : null;
   }
   const getLocalStorageData = () => {
@@ -396,11 +396,11 @@ function InvestmentDetails(props) {
   const calculateAge = (dobString) => {
     const today = new Date();
     const dob = new Date(dobString);
-  
+
     let age = today.getFullYear() - dob.getFullYear();
     const monthDiff = today.getMonth() - dob.getMonth();
     const dayDiff = today.getDate() - dob.getDate();
-  
+
     // If birthday hasn't occurred yet this year, subtract one from age
     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
       age--;
@@ -434,22 +434,20 @@ function InvestmentDetails(props) {
         const userData = sessionStorage.getItem("userInfo")
         const user_data = JSON.parse(userData)
         const age = calculateAge(user_data?.date_of_birth)
-        if(age >= 60 && user_data?.customer_gender === "F" || user_data?.customer_gender === "Female")
-        {
-          setInterestRates(response?.data?.data?.interestRates?.femaleSeniorCitizens); 
+        if (age >= 60 && user_data?.customer_gender === "F" || user_data?.customer_gender === "Female") {
+          setInterestRates(response?.data?.data?.interestRates?.femaleSeniorCitizens);
         }
-        else if(user_data?.customer_gender === "F" || user_data?.customer_gender === "Female")
-        {
-        setInterestRates(response?.data?.data?.interestRates?.female);
-        } else if(age >= 60){
-        setInterestRates(response?.data?.data?.interestRates?.seniorCitizens);
+        else if (user_data?.customer_gender === "F" || user_data?.customer_gender === "Female") {
+          setInterestRates(response?.data?.data?.interestRates?.female);
+        } else if (age >= 60) {
+          setInterestRates(response?.data?.data?.interestRates?.seniorCitizens);
         }
-        else{
-        setInterestRates(response?.data?.data?.interestRates?.regular);
+        else {
+          setInterestRates(response?.data?.data?.interestRates?.regular);
         }
 
         setMinMaxAmounts(response?.data?.data?.minMaxAmounts);
-        console.log("--",response?.data?.data?.fd_details?.fdPayoutMethod)
+        console.log("--", response?.data?.data?.fd_details?.fdPayoutMethod)
         setPayoutFrequency(response?.data?.data?.fd_details?.fdPayoutMethod)
       } else if (response?.data?.errors?.length) {
         setShowModal(true);
@@ -561,7 +559,7 @@ function InvestmentDetails(props) {
       Maturity_Instruction: values.maturity,
       Interest_Payout: values.payout,
       Enable_Form_15G: values.form15g,
-      Platform:isMobile()
+      Platform: isMobile()
     });
     props.handle(props.nextPage, e, { investment_details: investmentDetails }, "investment_details", values);
   }
@@ -748,12 +746,12 @@ function InvestmentDetails(props) {
     if (payoutFrequency.length === 1) {
       setFieldValue("payout", payoutFrequency[0]);
     }
-    if (interestRates  && values.payout) {
+    if (interestRates && values.payout) {
       if (!interestRates[values.payout]) {
         setFieldValue("payout", "")
       }
     }
-  }, [payoutFrequency,interestRates,values.payout]);
+  }, [payoutFrequency, interestRates, values.payout]);
 
   useEffect(() => {
     if (Object.keys(minMaxAmounts).length && values?.payout) {
@@ -808,7 +806,7 @@ function InvestmentDetails(props) {
   useEffect(() => {
     values.payout && validateField("depositAmount");
     if (Object.keys(minMaxAmounts).length && values?.payout) {
-      if(values.depositAmount!==""){
+      if (values.depositAmount !== "") {
         if (values?.depositAmount < minMaxAmounts[values?.payout]?.minAmount ||
           values?.depositAmount > minMaxAmounts[values?.payout]?.maxAmount &&
           Object.keys(fdDetails).length &&
@@ -816,7 +814,7 @@ function InvestmentDetails(props) {
           setShowDepositAmountModal(true);
         }
       }
-      
+
     }
   }, [values.payout]);
 
@@ -852,7 +850,7 @@ function InvestmentDetails(props) {
           <div className="text-regular text-xl mb-5 text-subcontent">
             {translate(INVESTMENT.provideInvestmentDetails)}
           </div>
-          
+
           <ErrorModal
             canShow={showModal}
             updateModalState={toggleModal}
@@ -876,7 +874,7 @@ function InvestmentDetails(props) {
                     <div className="w-full  text-regular text-2xl text-light-gray">
                       <input type="text" id="deposit_amount_field"
                         className="bg-white w-full border border-gray-300  p-3 text-black h-12 rounded mb-"
-                        value={values.depositAmount} 
+                        value={values.depositAmount}
                         name="depositAmount"
                         placeholder={`${translate(AFTER_REVIEW.depositAmount)} *`}
                         maxLength={8}
@@ -896,7 +894,7 @@ function InvestmentDetails(props) {
                           className="bg-none w-full h-auto flex items-center absolute text-regular text-2xl text-black"
                           id="deposit_amount_field"
                         >
-                          <div className="bg-white w-auto border-2 rounded-md">
+                          <div className="bg-white w-auto border-2 rounded-md z-10">
                             <div className="grid grid-cols-3 gap-2 p-3 font-semibold">
                               {depositAmountDropdown.length && depositAmountDropdown.map((amount) => {
                                 return (
@@ -920,37 +918,37 @@ function InvestmentDetails(props) {
                         </div>
                         : null}
                       {
-                        
-                   values.depositAmount && errors.depositAmount && Object.keys(fdDetails).length ? 
-                     (<div className="text-base text-light-red">
+
+                        values.depositAmount && errors.depositAmount && Object.keys(fdDetails).length ?
+                          (<div className="text-base text-light-red">
                             {errors.depositAmount}
                           </div>
-                        ) : null}
+                          ) : null}
                       <div className="flex flex-x flex-col space-x-2 items-right my-3">
-                       <p className="text-fd-primary text-bold uppercase text-2xl mt-1 mb-2 mt-1">
+                        <p className="text-fd-primary text-bold uppercase text-2xl mt-1 mb-2 mt-1">
                           {
                             convertToWords(values.depositAmount)
                           }
                         </p>
                         <p className="flex">
-                        <BsFillInfoCircleFill />
-                        <p className="text-regular text-base">
-                          {translate(INVESTMENT.min)} ₹
-                          {
-                            (Object.keys(minMaxAmounts).length && values?.payout) && minMaxAmounts?.[values?.payout]?.minAmount ?
-                              displayINRAmount(minMaxAmounts?.[values?.payout]?.minAmount) :
-                              fdDetails.fdMinAmount ? displayINRAmount(fdDetails.fdMinAmount) : null
-                          }
-                          {" "}& {translate(INVESTMENT.max)} ₹
-                          {
-                            (Object.keys(minMaxAmounts).length && values?.payout) && minMaxAmounts?.[values?.payout]?.maxAmount ?
-                              displayINRAmount(minMaxAmounts?.[values?.payout]?.maxAmount) :
-                              fdDetails.fdMaxAmount ? displayINRAmount(fdDetails.fdMaxAmount) : null
-                          } 
+                          <BsFillInfoCircleFill />
+                          <p className="text-regular text-base">
+                            {translate(INVESTMENT.min)} ₹
+                            {
+                              (Object.keys(minMaxAmounts).length && values?.payout) && minMaxAmounts?.[values?.payout]?.minAmount ?
+                                displayINRAmount(minMaxAmounts?.[values?.payout]?.minAmount) :
+                                fdDetails.fdMinAmount ? displayINRAmount(fdDetails.fdMinAmount) : null
+                            }
+                            {" "}& {translate(INVESTMENT.max)} ₹
+                            {
+                              (Object.keys(minMaxAmounts).length && values?.payout) && minMaxAmounts?.[values?.payout]?.maxAmount ?
+                                displayINRAmount(minMaxAmounts?.[values?.payout]?.maxAmount) :
+                                fdDetails.fdMaxAmount ? displayINRAmount(fdDetails.fdMaxAmount) : null
+                            }
+                          </p>
+                          {!isProductDetailsLoaded ? <Loader /> : null}
                         </p>
-                        {!isProductDetailsLoaded ? <Loader /> : null}
-                        </p>
-                       
+
                       </div>
                     </div>
                   </div>
@@ -970,7 +968,7 @@ function InvestmentDetails(props) {
                     }
                   </div>
                 </div>
-                <div>
+                {/* <div>
                   <div className="text-regular text-4xl text-black mb-2">
                     {translate(COMMON_CONSTANTS.tenure)} *
                   </div>{!isTenureDataLoaded ? <Loader /> : null}
@@ -1160,6 +1158,100 @@ function InvestmentDetails(props) {
                         : null}
                     </div>
                   </div>
+                </div> */}
+                <div className="w-full">
+                  <div className="text-regular text-4xl text-black mb-2">
+                    {translate(COMMON_CONSTANTS.tenure)} *
+                  </div>
+                  {!isTenureDataLoaded ? <Loader /> : null}
+
+                  <div className="flex flex-col gap-2 md:gap-0 md:flex-row space-x-1">
+                    {year?.allowedYear && (
+                      <TenureSelect
+                        label={translate(COMMON_CONSTANTS.years)}
+                        fieldName="tenureYears"
+                        options={[{ label: 'Years', options: year.fixedValues.map(val => ({ value: val, label: `${val} ${translate(COMMON_CONSTANTS.years)}` })) }]}
+                        defaultValue={{ value: values.tenureYears, label: `${values.tenureYears} ${translate(COMMON_CONSTANTS.years)}` }}
+                        onChange={setFieldValue}
+                        errorMessage={errors.tenureYears && INVESTMENT_DETAILS.invalidYears(year.minTenure, year.maxTenure)}
+                        isFixedValue={year.isFixedValue}
+                      />
+                    )}
+
+                    {month?.allowedMonth && (
+                      <TenureSelect
+                        label={translate(COMMON_CONSTANTS.months)}
+                        fieldName="tenureMonths"
+                        options={[{ label: 'Months', options: month.fixedValues.map(val => ({ value: val, label: `${val} ${translate(COMMON_CONSTANTS.months)}` })) }]}
+                        defaultValue={{ value: values.tenureMonths, label: `${values.tenureMonths} ${translate(COMMON_CONSTANTS.months)}` }}
+                        onChange={setFieldValue}
+                        errorMessage={errors.tenureMonths && INVESTMENT_DETAILS.invalidMonths(month.minTenure, month.maxTenure)}
+                        isFixedValue={month.isFixedValue}
+                      />
+                    )}
+
+                    {day?.allowedDay ?
+                        <div className={(year?.allowedYear && month?.allowedMonth) ? "flex flex-col w-1/3" :
+                          (year?.allowedYear && !month?.allowedMonth) ? "flex flex-col w-full" :
+                            (!year?.allowedYear && month?.allowedMonth) ? "flex flex-col w-full m-0" :
+                              "flex flex-col w-full m-0"}
+                        >
+                          <div className="flex text-regular text-2xl text-light-gray">
+                            <div className="flex gap-2 justify-start items-center bg-white text-black w-auto border border-gray-300  rounded p-2 w-full"
+                              onClick={() => setIsDayClicked(!isDayClicked)}
+                            >
+                              <input type="text" id="tenure_day_field"
+                                className="w-full rounded-xl outline-none border-none text-black"
+                                name="tenureDays"
+                                value={values.tenureDays}
+                                onChange={(e) => {
+                                  const filteredText = numberInput(e.target.value);
+                                  setFieldValue("tenureDays", filteredText);
+                                }}
+                                onKeyUp={() => setIsDayClicked(false)}
+                                onClick={() => setIsDayClicked(!isDayClicked)}
+                                readOnly={day?.isFixedValue}
+                              // placeholder="Day(s)"
+                              />
+                              {translate(COMMON_CONSTANTS.days)}
+                            </div>
+                          </div>
+                          <div>
+                            {errors.tenureDays ?
+                              <div className="mt-1 text-light-red text-base">
+                                {INVESTMENT_DETAILS.invalidDays(day.minTenure, day.maxTenure)}
+                              </div> : null
+                            }
+                          </div>
+                          {isDayClicked ?
+                            <div className="bg-none w-max h-auto mt-12 items-center absolute">
+                              <ul className="ulClass bg-white w-full items-center" ref={dayDropdownRef}>
+                                {(day.fixedValues).map((dayValue, index) => {
+                                  return (
+                                    <>
+                                      <div className="rounded-md">
+                                        <li className="bg-background-secondary hover:cursor-pointer font-thin rounded-md p-1 flex items-center border mx-3 my-2" id={index}
+                                          key={index}
+                                          selected={dayValue}
+                                          value={dayValue}
+                                          onClick={({ target: { value } }) => {
+                                            setIsDayClicked(false);
+                                            setFieldValue("tenureDays", value)
+                                          }}
+                                        >
+                                          {dayValue} {translate(COMMON_CONSTANTS.days)}
+                                        </li>
+                                      </div>
+                                    </>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                            :
+                            null}
+                        </div>
+                        : null}
+                  </div>
                 </div>
                 <div className="my-5">
                   <div className="text-regular text-4xl mb-2 text-black">
@@ -1180,7 +1272,7 @@ function InvestmentDetails(props) {
                           {translate(maturityInstruction.autoRedeem)}
                         </label>
                       </div>
-                      {selectedManufactureId?.toUpperCase() != "SIB" && selectedManufactureId?.toUpperCase() != "UNITY" && selectedManufactureId?.toUpperCase() != "PNBHFC"  ? <div className="flex items-center text-black p-2">
+                      {selectedManufactureId?.toUpperCase() != "SIB" && selectedManufactureId?.toUpperCase() != "UNITY" && selectedManufactureId?.toUpperCase() != "PNBHFC" ? <div className="flex items-center text-black p-2">
                         <input
                           type="radio"
                           value={maturityInstruction.renewPrincipal}
@@ -1224,9 +1316,8 @@ function InvestmentDetails(props) {
                       setFieldValue("payout", e.target.value);
                     }}
                     disabled={payoutFrequency && payoutFrequency.length === 1}
-                    className={`text-regular text-2xl border border-gray-300  bg-white p-3 w-full rounded text-black  ${
-                      payoutFrequency && payoutFrequency.length === 1 ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : ''
-                    }`}
+                    className={`text-regular text-2xl border border-gray-300  bg-white p-3 w-full rounded text-black  ${payoutFrequency && payoutFrequency.length === 1 ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : ''
+                      }`}
                   >
                     <option className="text-light-gray" value="" disabled selected hidden>
                       Select Payout *
@@ -1307,26 +1398,26 @@ function InvestmentDetails(props) {
                   </>
                 }
               </div>
-              <div className={`page-background rounded-xl w-full ${investmentdetailcss.deposit_summary}`}>
+              <div className={`bg-dark-gray rounded-xl w-full ${investmentdetailcss.deposit_summary}`}>
                 <div className="inline-block sm:px-6 lg:px-6">
                   <div className="m-4">
                     <div>
                       {userAge >= 60 ?
-                      <div className="flex items-center justify-center">
-                      <span className="text-black">{translate(INVESTMENT.seniorCitizenBenefit)}</span>
-                      <div className="relative w-32 h-32 ">
-                      {/* Green spinning ring */}
-                      {/* <div className=" inset-0 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div> */}
+                        <div className="flex items-center justify-center">
+                          <span className="text-black">{translate(INVESTMENT.seniorCitizenBenefit)}</span>
+                          <div className="relative w-32 h-32 ">
+                            {/* Green spinning ring */}
+                            {/* <div className=" inset-0 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div> */}
 
-                      {/* Static Image centered inside */}
-                      <Image
-                        src="/Seniorcitizen.png"
-                        alt="Seniorcitizen"
-                        width={80}
-                        height={15}
-                        className="z-10 animate-pulse"
-                      />
-                    </div>
+                            {/* Static Image centered inside */}
+                            <Image
+                              src="/Seniorcitizen.png"
+                              alt="Seniorcitizen"
+                              width={80}
+                              height={15}
+                              className="z-10 animate-pulse"
+                            />
+                          </div>
 
 
                         </div> : null}
@@ -1334,36 +1425,36 @@ function InvestmentDetails(props) {
                         {translate(INVESTMENT.whatwillYouGet)}
                       </div>
                       <div className="flex flex-col space-y-3">
-                        <span className="border-b flex flex-col text-regular text-2xl text-black">
+                        <span className="border-b flex flex-col font-light text-xl text-black">
                           {translate(COMMON_CONSTANTS.interestRate)}/ {translate(DETAIL_FD.annum)}
-                          <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
+                          <span className="text-black text-bold text-2xl mt-1 mb-2 mt-1">
                             {loading ? <Loader /> : (
                               maturityCalculationData?.interestRate && maturityCalculationData.interestRate
                             )}{" "}
                             % {translate(DETAIL_FD.pa)}.
                           </span>
                         </span>
-                        <span className="border-b flex flex-col text-regular text-2xl text-black">
+                        <span className="border-b flex flex-col font-light text-xl text-black">
                           {translate(INVESTMENT.dateOfMaturity)}*
-                          <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
+                          <span className="text-black text-bold text-2xl mt-1 mb-2 mt-1">
                             {loading ? <Loader /> : maturity_date && formatDate(maturity_date)}
                           </span>
                         </span>
-                        <span className="border-b flex flex-col text-regular text-2xl text-black">
+                        <span className="border-b flex flex-col font-light text-xl text-black">
                           {translate(FD_RENEWAL.depositAmount)}
-                          <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
+                          <span className="text-black text-bold text-2xl mt-1 mb-2 mt-1">
                             ₹ {loading ? <Loader /> : maturityCalculationData?.depositAmount && maturityCalculationData.depositAmount.toLocaleString("en-IN")}
                           </span>
                         </span>
-                        <span className="border-b flex flex-col text-regular text-2xl text-black">
+                        <span className="border-b flex flex-col font-light text-xl text-black">
                           {translate(INVESTMENT.interestAmount)}*
-                          <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
+                          <span className="text-black text-bold text-2xl mt-1 mb-2 mt-1">
                             ₹ {loading ? <Loader /> : aggrigated_interest && displayINRAmount(aggrigated_interest)}
                           </span>
                         </span>
                         <span className="flex flex-col text-regular text-2xl text-black">
                           {translate(INVESTMENT.totalPayout)}
-                          <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
+                          <span className="text-black text-bold text-2xl mt-1 mb-2 mt-1">
                             ₹ {loading ? <Loader /> : maturity_amount && displayINRAmount(maturity_amount)}
                           </span>
                         </span>
@@ -1386,7 +1477,7 @@ function InvestmentDetails(props) {
             {props.isOnboardingUser ?
               <div className="flex flex-row justify-center gap-3">
                 <button
-                  className={(!formik.isValid ||  (userType === 'user' && !values.disclaimerCheckbox) ||  loading ||  totalDaysToMatureFD === 0 || maturity_amount === 0) ? "button-active button-transition hover:bg-hover-primary text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  hover:button-shadow text-medium text-xl lg:text-2xl w-fit  " :"button-active btn-gradient button-transition hover:bg-hover-primary text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  hover:button-shadow text-medium text-xl lg:text-2xl w-fit  "} 
+                  className={(!formik.isValid || (userType === 'user' && !values.disclaimerCheckbox) || loading || totalDaysToMatureFD === 0 || maturity_amount === 0) ? "button-active button-transition hover:bg-hover-primary text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  hover:button-shadow text-medium text-xl lg:text-2xl w-fit  " : "button-active btn-gradient button-transition hover:bg-hover-primary text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  hover:button-shadow text-medium text-xl lg:text-2xl w-fit  "}
                   disabled={
                     !formik.isValid ||
                     (userType === 'user' && !values.disclaimerCheckbox) ||
@@ -1420,7 +1511,7 @@ function InvestmentDetails(props) {
                     !values.maturity ||
                     totalDaysToMatureFD === 0 ||
                     maturity_amount === 0 ||
-                    !Object.keys(maturityCalculationData).length) ? "button-active  button-transition text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  " : "button-active  button-transition btn-gradient  text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  " } 
+                    !Object.keys(maturityCalculationData).length) ? "button-active  button-transition text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  " : "button-active  button-transition btn-gradient  text-medium text-xl lg:text-2xl w-fit   text-medium text-xl lg:text-2xl w-fit  "}
                   disabled={
                     !formik.isValid ||
                     (userType === 'user' && !values.disclaimerCheckbox) ||
@@ -1457,10 +1548,10 @@ function InvestmentDetails(props) {
                 <div className="m-4">
                   <div>
                     <div className="text-regular text-4xl text-black mb-5">
-                    Investment Returns And Benefits
+                      Investment Returns And Benefits
                     </div>
                     <div className="flex flex-col space-y-3">
-                      <span className="border-b flex flex-col text-regular text-2xl text-black">
+                      <span className="border-b flex flex-col font-light text-xl text-black">
                         {translate(COMMON_CONSTANTS.interestRate)}/ {translate(DETAIL_FD.annum)}
                         <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
                           {loading ? <Loader /> : (
@@ -1469,19 +1560,19 @@ function InvestmentDetails(props) {
                           % {translate(DETAIL_FD.pa)}.
                         </span>
                       </span>
-                      <span className="border-b flex flex-col text-regular text-2xl text-black">
+                      <span className="border-b flex flex-col font-light text-xl text-black">
                         {translate(INVESTMENT.dateOfMaturity)}*
                         <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
                           {loading ? <Loader /> : maturity_date && formatDate(maturity_date)}
                         </span>
                       </span>
-                      <span className="border-b flex flex-col text-regular text-2xl text-black">
+                      <span className="border-b flex flex-col font-light text-xl text-black">
                         {translate(FD_RENEWAL.depositAmount)}
                         <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
                           ₹ {maturityCalculationData?.depositAmount && maturityCalculationData.depositAmount.toLocaleString("en-IN")}
                         </span>
                       </span>
-                      <span className="border-b flex flex-col text-regular text-2xl text-black">
+                      <span className="border-b flex flex-col font-light text-xl text-black">
                         {translate(INVESTMENT.interestAmount)} * ({translate(COMMON_CONSTANTS.onMaturity)})
                         <span className="text-fd-primary text-bold text-2xl mt-1 mb-2 mt-1">
                           ₹ {loading ? <Loader /> : aggrigated_interest && displayINRAmount(aggrigated_interest)}

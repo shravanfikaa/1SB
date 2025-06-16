@@ -16,7 +16,7 @@ function BankDetails({ bankDetails }) {
               <th className="font-normal">{translate(BANK_DETAILS_PAGE.ifscCode)}</th>
             </tr>
           </thead>
-          <tbody className="text-regular text-xl">
+          <tbody className="text-regular text-xl text-black">
             {bankDetails &&
               bankDetails.map((data) => {
                 return (

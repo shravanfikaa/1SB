@@ -246,7 +246,7 @@ function RMCustomer() {
                 <th className="p-[5px]">{translate(RM_CUSTOMER_COLUMNS[val])}</th>
               ))}
             </thead>
-            <tbody className="text-regular text-xl">
+            <tbody className="text-regular text-xl text-black">
               {customerData &&
                 customerData.map((data, index) => {
                   return (

@@ -194,7 +194,7 @@ function BasicDetails(props) {
       <div className="text-regular text-xl mb-5 text-subcontent">
         {translate(BASIC_DETAILS.fdDetails)}
       </div>
-      <div className="flex items-center flex-wrap gap-3 w-full lg:flex-nowrap mb-3 gap-3">
+      <div className="flex items-start flex-wrap gap-3 w-full lg:flex-nowrap mb-3 gap-3">
       
         {
           userProfileImage ? <img

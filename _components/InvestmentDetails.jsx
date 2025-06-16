@@ -60,7 +60,7 @@ const InvestmentDetails = ({
               toggleProductInfo={toggleProductInfo}
             />
           )}
-          <div className="flex justify-around">
+          <div className="flex justify-around gap-3 flex-wrap">
             <div
               className={`${review_invest_css.basic_detail_status_position} w-full gap-3 flex text-regular  text-2xl text-light-gray`}
             >

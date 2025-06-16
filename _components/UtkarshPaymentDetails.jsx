@@ -35,7 +35,7 @@ function UtkarshPaymentDetails({ details }) {
                 </div>
                 <div className="text-light-gray pb-1">{translate(COMMON_CONSTANTS.tenure)}</div>
                 <div>
-                  <p className="break-all">
+                  <p className="break-all text-regular text-black">
                     {details?.paymentDetails?.displayTenure ? details?.paymentDetails?.displayTenure :
                       `${details?.paymentDetails?.tenor ? details?.paymentDetails?.tenor : ""} ${translate(COMMON_CONSTANTS.days)}`}
                   </p>

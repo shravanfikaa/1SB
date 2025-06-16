@@ -226,7 +226,9 @@ function CustomerFDList() {
   }, [totalRecords, rowsPerPage]);
 
   useEffect(() => {
+    if(queryURL){
     getCustomerFDs();
+    } 
   }, [queryURL]);
 
   useEffect(() => {

@@ -1023,8 +1023,8 @@ function BankDetails(props) {
                       ) :
                         ifscCodeDetails.bankName && values.ifscCode ? (
                           <div className="w-full">
-                            <div className="mb-3 flex flex-wrap space-x-5 w-full btn-gradient">
-                              <div className="flex flex-wrap border border-gray-300 shadow p-3 w-full rounded">
+                            <div className="mb-3 flex flex-wrap space-x-5 w-full border border-btn-gradient">
+                              <div className="flex flex-wrap border border-gray-300  p-3 w-full rounded">
                                 <div className="flex  items-center space-x-5 w-full">
                                   <div className="w-[10%] page-gradient">
                                     <img
@@ -1034,9 +1034,9 @@ function BankDetails(props) {
                                       objectFit={"contain"}
                                     ></img>
                                   </div>
-                                  <div className="w-auto text-regular flex flex-wrap sm:flex-nowrap gap-2 text-xl text-white">
-                                    <div className="mb-1 text-regular text-xl text-white">{ifscCodeDetails.bankName}</div>
-                                    <div className="mb-1 text-regular text-xl text-white">A/C : {values.accountNumber}</div>
+                                  <div className="w-auto text-regular flex flex-wrap sm:flex-nowrap gap-2 text-xl text-black">
+                                    <div className="mb-1 text-regular text-xl text-black">{ifscCodeDetails.bankName}</div>
+                                    <div className="mb-1 text-regular text-xl text-black">A/C : {values.accountNumber}</div>
                                     <div>IFSC : {ifscCodeDetails.ifscCode}</div>
                                   </div>
                                 </div>

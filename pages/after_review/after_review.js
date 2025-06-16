@@ -558,7 +558,7 @@ function AfterReview() {
                     <ExclamationCircle />
                   </span>
                   <span className="text-light-red text-6xl text-medium capitalize">
-                    {translate(paymentDetails.payment_status.toLowerCase())}!
+                    {translate(paymentDetails.payment_status.toLowerCase()) ?? 'Failed'}!
                   </span>
                 </>
               )}
@@ -681,7 +681,7 @@ function AfterReview() {
                       <Link href="/product/product_list">{translate(AFTER_REVIEW.exploreMoreFd)}</Link>
                     </button>
                     {
-                      appConfig.distributorId=="tipson" ?  <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleExploreMoreBonds}>
+                      appConfig.distributorId.toLowerCase()=="tipson" ?  <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleExploreMoreBonds}>
                       {translate(AFTER_REVIEW.exploreMoreBonds)}
                     </button>: <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleBackbutton}>
                       Back

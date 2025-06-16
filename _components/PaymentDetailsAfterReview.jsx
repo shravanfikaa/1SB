@@ -158,7 +158,7 @@ function PaymentDetails({ details }) {
               <div className="text-left text-xl flex flex-row justify-between gap-3">
                 <div className="w-1/5">
                   <div className="text-light-gray text-medium pb-1">{translate(COMMON_CONSTANTS.tenure)}</div>
-                  <p className="break-all text-black">{
+                  <p className="break-all text-regular text-black">{
                     paymentDetails?.displayTenure ? paymentDetails?.displayTenure :
                       `${paymentDetails?.tenor ? paymentDetails?.tenor : ""} ${translate(COMMON_CONSTANTS.days)}`
                   }</p>
