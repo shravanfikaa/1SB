@@ -36,7 +36,7 @@ const BankingDetails = ({
           </div>
         </div>
         <div className={`${review_invest_css.investment_div_width} mb-3`}>
-          <div className="border-2 rounded p-3 btn-gradient">
+          <div className="border-2 rounded p-3 border-btn-gradient">
             <div
               className={`${review_invest_css.bank_status_position} items-center justify-between`}
             >
@@ -75,9 +75,9 @@ const BankingDetails = ({
                         </div>
                       ) : null}
                     </div> : <div className="w-full text-regular text-2xl flex-wrap text-light-gray items-center flex gap-1">
-                      <div className="text-xl text-white">{bank_details?.bankName}</div>
+                      <div className="text-xl text-black">{bank_details?.bankName}</div>
                       {bank_details?.bankAccountNumber ? (
-                        <div className="text-xl text-white">
+                        <div className="text-xl text-black">
                           A/C :{" "}
                           {bank_details?.bankAccountNumber
                             ? bank_details?.bankAccountNumber
@@ -85,7 +85,7 @@ const BankingDetails = ({
                         </div>
                       ) : null}
                       {bank_details?.bankIfsc ? (
-                        <div className="text-xl text-white">
+                        <div className="text-xl text-black">
                           IFSC :{" "}
                           {bank_details?.bankIfsc
                             ? bank_details?.bankIfsc
@@ -97,14 +97,14 @@ const BankingDetails = ({
                 </div>
               </div>
               <div className="justify-start">
-                <div className="flex  items-center gap-3 text-regular text-xl btn-gradient rounded p-2">
+                <div className="flex  items-center gap-3 text-regular text-xl  rounded p-2">
                   <div
                     className={
                       bankVerificationStatus.includes("Verification")
-                        ? "text-white"
+                        ? "text-primary-green"
                         : bankVerificationStatus == "Verified" ||
                           bankVerificationStatus == "completed"
-                          ? "text-white"
+                          ? "text-primary-green"
                           : "text-light-red"
                     }
                   >
@@ -120,10 +120,10 @@ const BankingDetails = ({
                   <div
                     className={
                       bankVerificationStatus.includes("Verification")
-                        ? "text-white"
+                        ? "text-primary-green"
                         : bankVerificationStatus == "Verified" ||
                           bankVerificationStatus == "completed"
-                          ? "text-white"
+                          ? "text-primary-green"
                           : "text-light-red"
                     }
                   >

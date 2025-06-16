@@ -1047,7 +1047,7 @@ function FDProductInfo({ productInfo, isOnboardingUser }) {
                 </div>
                 {isHighlightActive && (
                   <div className="accordion-content border-b">
-                    <div className="text-regular text-xl">
+                    <div className="text-regular text-xl text-black">
                       {productDetails.hasOwnProperty(["Key Highlights"]) ? (
                         productDetails["Key Highlights"].map((item) => {
                           return (

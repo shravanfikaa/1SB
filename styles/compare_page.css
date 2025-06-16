@@ -369,6 +369,8 @@ button[disabled] {
   padding-left: 5px;
   padding-right: 5px;
   color: black;
+  max-height: 20pc;
+    overflow-y: auto;
 }
 .liClass {
   background-color: rgb(179, 255, 218);
@@ -785,14 +787,14 @@ svg.close-button{
      position: relative;
     display: flex;
     flex-wrap: wrap;
-    padding: 8px 5px 13px;
+    padding: 20px;
     background: #ffffff;
     box-shadow: 0 15px 15px -6px #0000001a;
 }
 .grid-card-body::before{
-  content: "";
+     content: "";
     width: 1px;
-    height: calc(100% - 36px);
+    height: calc(100% - 52px);
     display: inline-block;
     background: rgba(31, 136, 174, .1);
     position: absolute;

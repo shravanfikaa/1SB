@@ -54,7 +54,7 @@ function CorporatePlan({ journeyType, logo, type, name }) {
         </div>
         <div>
           {productName && <div className="text-bold text-4xl text-black">{productName}</div>}
-          {productType && <div className="text-medium text-2xl text-light-gray">{productType?.toLowerCase() === "cumulative" ? translate(PRODUCT_TYPE[productType.toLowerCase()]) : translate(PRODUCT_TYPE["nonCumulative"])}</div>}
+          {productType && <div className="text-medium text-2xl font-thin italic text-primary text-right">{productType?.toLowerCase() === "cumulative" ? translate(PRODUCT_TYPE[productType.toLowerCase()]) : translate(PRODUCT_TYPE["nonCumulative"])}</div>}
         </div>
         </div>
           {journeyType == 'RM' && <div className="flex flex-col text-right text-medium uppercase"><h1 className="text-3xl text-black">{customerName ? customerName : ""}</h1>

@@ -28,7 +28,7 @@ function NomineeDetails({
               <th></th>
             </tr>
           </thead>
-          <tbody className="text-regular text-xl">
+          <tbody className="text-regular text-xl text-black">
             {nomineeData &&
               nomineeData.map((data) => {
                 return (

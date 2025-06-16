@@ -1090,12 +1090,12 @@ function AllFds() {
                                 <div><p className="text-medium text-xl text-black text-light-gray">
                                   {translate(AGENT.fdStatus)}
                                 </p>
-                                  <p className="text-regular text-xl text-black">{item.status}</p>
+                                  <p className="text-regular text-xl text-black capitalize">{ item.status != null ? item.status.toLowerCase() : "Pending"}</p>
                                 </div>
                                 <div>
                                   <p className="text-medium text-xl text-black text-light-gray">{translate(AGENT.paymentStatus)}</p>
                                   <p className="text-regular text-xl text-black">
-                                    <div>
+                                    <div className="capitalize">
                                       {item &&
                                         item.hasOwnProperty("payment_status") &&
                                         item.payment_status != null

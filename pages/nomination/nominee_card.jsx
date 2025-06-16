@@ -216,7 +216,7 @@ function NomineeCard({
     otherwise: yup.string().notRequired(),
   }),
     nominee_pincode: yup
-      .string()
+      ?.string()
       .matches(/^[1-9][0-9]{5}$/, translate(VALIDATION_CONSTANT.nomineePINError))
       .min(6, translate(VALIDATION_CONSTANT.nomineePINError))
       .test("Is pin code valid", translate(REDIRECTION_MSG.InvalidZIPcode), (value) => {
@@ -246,9 +246,10 @@ function NomineeCard({
 
     const { nominee_first_name, nominee_middle_name, nominee_last_name} = this.parent;
     let userInfo={};
+ if (typeof window !== 'undefined') {
     if (sessionStorage.getItem("userInfo")) {
        userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-    }
+    }}
    let nomineeFull ="";
     let investerFull = "";
 
@@ -278,9 +279,10 @@ function NomineeCard({
   function () {
     if (manufacturerId?.toLowerCase() !== "unity") return true;
      let userInfo={};
+      if (typeof window !== 'undefined') {
     if (sessionStorage.getItem("userInfo")) {
        userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
-    }
+    }}
 
     const { nominee_first_name, nominee_middle_name, nominee_last_name, nominee_guardian_first_name, nominee_guardian_middle_name = "", nominee_guardian_last_name } = this.parent;
      
@@ -371,18 +373,18 @@ function NomineeCard({
         sameAddress && setFieldValue("sameAddress", true);
       }
     }
-  }, [values.nominee_address_line1, values.nominee_pincode]);
+  }, [values.nominee_address_line1, values?.nominee_pincode]);
 
   useEffect(() => {
-    if (values.nominee_pincode?.length === 6 && !values.sameAddress) {
-      getZipCodeDetails(values.nominee_pincode);
+    if (values?.nominee_pincode?.length === 6 && !values.sameAddress) {
+      getZipCodeDetails(values?.nominee_pincode);
     }
-    if (values.nominee_pincode === "") {
+    if (values?.nominee_pincode === "") {
       setFieldValue("nominee_city", "");
       setFieldValue("nominee_state", "");
       setFieldValue("nominee_country", "");
     }
-  }, [values.nominee_pincode,nominee["nominee_pincode"]]);
+  }, [values?.nominee_pincode,nominee["nominee_pincode"]]);
 
   useEffect(() => {
     formik.validateField("nominee_pincode");
@@ -1051,7 +1053,7 @@ function NomineeCard({
                 <input
                   type="text"
                   name="nominee_pincode"
-                  value={values.nominee_pincode}
+                  value={values?.nominee_pincode}
                   onChange={(e) => {
                     const filteredText = numberInput(e.target.value);
                     setFieldValue("nominee_pincode", filteredText);
@@ -1065,9 +1067,9 @@ function NomineeCard({
                   placeholder={`${translate(ADDRESS_DETAILS.zip)} *`}
                   disabled={values.sameAddress || isSelectedFromDropdown}
                 />
-                {errors.nominee_pincode ? (
+                {errors?.nominee_pincode ? (
                   <div className="text-base text-light-red">
-                    {errors.nominee_pincode}
+                    {errors?.nominee_pincode}
                   </div>
                 ) : null}
               </div>

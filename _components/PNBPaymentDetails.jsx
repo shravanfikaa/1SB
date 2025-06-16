@@ -76,7 +76,7 @@ function PNBPaymentDetails({ details }) {
                 </div>
                 <div className="text-light-gray pb-1">{translate(COMMON_CONSTANTS.tenure)}</div>
                 <div>
-                  <p className="break-all">{
+                  <p className="break-all text-regular text-black">{
                     paymentDetails?.displayTenure ? paymentDetails?.displayTenure :
                       `${paymentDetails?.tenor ? paymentDetails?.tenor : ""} ${translate(COMMON_CONSTANTS.days)}`
                   }</p>

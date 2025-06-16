@@ -345,7 +345,7 @@ const WithdrawalFDDetails = ({ fdDetails, preMatureWithdrawalInqData, updateModa
           </div>
         </div>
       </div>
-      <div className="text-regular text-xl">
+      <div className="text-regular text-xl text-black">
         The final withdrawal amount will be credited to your registered bank account <span className="text-fd-primary">{maskAccountNumber(preMatureWithdrawalInqData?.preWithdrawalAllowed ? preMatureWithdrawalInqData.bankAccountNum : "")}</span> within 1-2 working days.
       </div>
       <div className="flex justify-end gap-3 mt-3">

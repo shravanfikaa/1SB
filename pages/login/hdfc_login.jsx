@@ -322,8 +322,9 @@ function Login({ panDetails, getModalStatus, message }) {
                       <br />
                     </div>
                     <div>
+                        <div className="relative w-full">
                       <input
-                        type="password"
+                        type={showOtp ? 'text': 'password'}
                         className="h-12 input-field-style text-black m-0 w-full mb-3"
                         placeholder={translate(LOGIN_LOGOUT.enterOtp)}
                         maxLength={6}
@@ -332,6 +333,14 @@ function Login({ panDetails, getModalStatus, message }) {
                         name="otpNumber"
                         onChange={handleOTPChange}
                       />
+                       <button
+                            type="button"
+                            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                            onClick={() => setShowOtp(!showOtp)}
+                          >
+                             {showOtp ? <IoMdEyeOff size={20} /> : <IoMdEye size={20} />}
+                          </button>
+                          </div>
                       {(touched.otpNumber || errors.otpNumber) &&
                         values.otpNumber ? (
                         <div className="mb-3 text-left text-base text-back text-light-red">

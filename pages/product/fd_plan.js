@@ -12,12 +12,16 @@ import { useTranslation } from "react-i18next";
 import { AGENT, COMMON_CONSTANTS, FD_RENEWAL, PAYOUT_FREQUENCY } from "../../constants";
 import PayoutPopup from "../../pages/compare_plan/payoutPopup";
 import { TfiLayoutGrid3Alt, TfiViewListAlt } from "react-icons/tfi";
+import appConfig from "../../app.config";
 let array = []
 function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
+
+  console.log("trailArray", trailArray)
   const [value, setValue] = useState();
   const [index, setIndex] = useState([]);
+  const [gridtoggle, setgridtoggle] = useState(true);
   const [comparedProductLogos, setComparedProductLogos] = useState([]);
-    const [selectedManufactureId, setSelectedManufactureId] = useState("");
+  const [selectedManufactureId, setSelectedManufactureId] = useState("");
 
   const router = useRouter();
   const { t: translate } = useTranslation();
@@ -196,13 +200,14 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
     return Math.round(tenor_val);
   }
 
-  useEffect(()=>{
-      if( typeof window != "undefined")
-      {
-         const selectedManufactureId = sessionStorage.getItem("selectedManufactureId");
-          setSelectedManufactureId(selectedManufactureId);
-      }
-  },[])
+  useEffect(() => {
+    if (typeof window != "undefined") {
+      appConfig.distributorId?.toUpperCase() == "NORTHARC" ? setgridtoggle(false) : setgridtoggle(true)
+      appConfig.distributorId?.toUpperCase() == "NORTHARC" ? setIsListView(false) : setIsListView(true)
+      const selectedManufactureId = sessionStorage.getItem("selectedManufactureId");
+      setSelectedManufactureId(selectedManufactureId);
+    }
+  }, [])
 
   return (
     <>{showModal.show && <PayoutPopup
@@ -211,27 +216,31 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
       data={showModal.data}
     />}
 
-      <div className="flex gap-5">
-        <div style={{width:"90%"}}>
-          <div className="flex gap-2 items-center justify-end">
+      <div className="flex gap-5 sm:flex-nowrap flex-wrap">
+        <div className="sm:w-[75%] md:w-[100%]" >
+          {gridtoggle && <div className="flex gap-2 items-center justify-end">
+
             <div>
-              <TfiViewListAlt color={isListView ? "#0d6efd" : "#000"}
+              <TfiViewListAlt
                 onClick={() => setIsListView(true)}
-                className="cursor-pointer" />
+                className={`cursor-pointer ${isListView ? 'text-fd-primary' : 'text-black'}`}
+              />
             </div>
             <div>
-              <TfiLayoutGrid3Alt color={!isListView ? "#0d6efd" : "#000"}
+              <TfiLayoutGrid3Alt
                 onClick={() => setIsListView(false)}
-                className="cursor-pointer" />
+                className={`cursor-pointer ${!isListView ? 'text-fd-primary' : 'text-black'}`}
+              />
             </div>
-          </div>
-          <div className={`  mt-5  ${screenType === "dashboard" ? "" : ""} ${product_list_css.plan_and_compare_gap}`} style={{ width: " 100%;" }}>
+          </div>}
+
+          <div className={`  mt-5  ${screenType === "dashboard" ? "" : ""} ${product_list_css.plan_and_compare_gap}`} >
             {trailArray && trailArray.length > 0 ? (
               <>
                 {isListView ? (
                   <div className={`${product_list_css.plan_section_width} border-background-primary ${screenType !== "dashboard" && "mt-5"}`}>
                     {trailArray != undefined ? trailArray.length > 0 ?
-                      trailArray.map((item) => {
+                      trailArray.sort((a, b) => a["fdName"].localeCompare(b["fdName"])).map((item) => {
 
                         return (
                           <>
@@ -243,7 +252,7 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
                                     <div className="flex justify-between">
                                       <div className={` ${product_list_css.logo_fdname_space} flex flex-row`}>
                                         <div>
-                                          <Image
+                                          <img
                                             className="min-w-6 object-contain"
                                             src={item["logoUrl"]}
                                             alt="1Silverbullet"
@@ -297,7 +306,7 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
                                                     </span>
                                                   ))}
                                                 </div>
-                                                {item["fdPayoutMethod"].some(method => method !== COMMON_CONSTANTS.onMaturity) && selectedManufactureId?.toLowerCase() !== "unity" &&(
+                                                {item["fdPayoutMethod"].some(method => method !== COMMON_CONSTANTS.onMaturity) && selectedManufactureId?.toLowerCase() !== "unity" && (
                                                   <span className="text-medium text-xl text-black">
                                                     {item["fdPayoutMethod"].length > 0 && ', '}
                                                     {translate(COMMON_CONSTANTS.onMaturity)}
@@ -320,6 +329,7 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
                                           type="checkbox"
                                           className="accent-primary-green h-4 w-4 hover:cursor-pointer"
                                           checked={checkboxPersist(array, item["fdId"])}
+                                          disabled={array.length >= 3 && !checkboxPersist(array, item["fdId"])}
                                           id={'plan' + item["fdId"]}
                                           value={item["fdId"]}
                                           onChange={getCheckBox}
@@ -432,15 +442,23 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
                       <div key={item["fdId"]} className={`col-span-1 ${product_list_css.row}`}>
                         <div className="grid-card grid  relative h-[100%]">
                           <div className="grid-card-header px-3 py-5 relative">
-                            <div className="flex gap-3">
-                              <div className={`${product_list_css.logo_fdname_space} grid-brand-logo bg-white rounded-xl shadow p-2`}>
-                                <img
-                                  className="min-w-6"
-                                  src={item["logoUrl"]}
-                                  alt="1Silverbullet"
-                                  style={{ width: '110px', height: '50px', objectFit: 'contain' }}
-                                />
+                            <div className="w-fit p-1 bg-white rounded-md mb-2">
+                              
+                              <div className={`text-primary-green text-thicccboi-bold text-sm ${product_list_css.display_or_hide_rating}`}>
+                                {item["ratings"][0]["rating"]}
                               </div>
+                            </div>
+                            <div className="flex gap-3">
+                              {appConfig.distributorId?.toLowerCase() !== 'northarc' && (
+                                <div className={`${product_list_css.logo_fdname_space} grid-brand-logo bg-white rounded-xl shadow p-2`}>
+                                  <img
+                                    className="min-w-6"
+                                    src={item["logoUrl"]}
+                                    alt="1Silverbullet"
+                                    style={{ width: '110px', height: '50px', objectFit: 'contain' }}
+                                  />
+                                </div>
+                              )}
                               <div>
                                 <h1 className="text-2xl text-black font-bold">{item["fdName"]}</h1>
                               </div>
@@ -484,13 +502,11 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
                                   {item["yield"][0]}% - {item["yield"][1]}%
                                 </p>
                               </div>
-                              <div className="w-[50%] p-2">
-                                <div className={`text-regular text-xl text-light-gray ${product_list_css.display_or_hide_rating}`}>
-                                  {item["ratings"][0]["rating_agency"]}
-                                </div>
-                                <div className={`text-primary-green text-thicccboi-bold text-xl ${product_list_css.display_or_hide_rating}`}>
-                                  {item["ratings"][0]["rating"]}
-                                </div>
+                              <div className={`w-[50%] p-2 ${product_list_css.col_interest}`}>
+                                <span className="text-regular text-xl text-light-gray">Rating Agency</span>
+                                <div className={`text-medium text-xl text-primary-green break-words ${product_list_css.display_or_hide_rating}`}>
+                                {item["ratings"][0]["rating_agency"]}
+                              </div>
                               </div>
 
                               <PayoutMethodDisplay
@@ -535,12 +551,15 @@ function FDplans({ trailArray, productData, isAPIDataLoaded, screenType }) {
 
           </div >
         </div>
-        <div className="flex flex-col gap-4 " style={{ width: " 25%;" }}>
-          <div className="sticky top-[0]">
-            <ComparePlan className="" arr={array} apiData={productData} removeFunction={remove} screenType={screenType} />
-            {array.length ? <FDVsGoldComparePlan /> : null}
+        <div className="sm:w-[25%] md:w-[100%]">
+          <div className="flex flex-col gap-4 " >
+            <div className="sticky top-[0]">
+              <ComparePlan className="" arr={array} apiData={productData} removeFunction={remove} screenType={screenType} />
+              {array.length ? <FDVsGoldComparePlan /> : null}
+            </div>
           </div>
         </div>
+
       </div>
     </>
 

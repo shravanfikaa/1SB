@@ -15,6 +15,7 @@ import { AGENT, COMMON_CONSTANTS, imageURL, KYC_DETAIL, LOGIN_LOGOUT, PARENT_DET
 import { useTranslation } from "react-i18next";
 import LanguageChange from "../../_components/LanguageChange"
 import { applicationSetup } from "../../utils/applicationSetup";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function AgentLogin() {
   const [emailClicked, setEmailClicked] = useState(false);
@@ -30,6 +31,7 @@ function AgentLogin() {
   const [distributerLogo, setDistributerLogo] = useState("");
   const { t: translate } = useTranslation();
   const [featureFlag, setFeatureFlag] = useState(null);
+  const [showOtp, setShowOtp] = useState(false);
 
   const router = useRouter();
 
@@ -55,7 +57,7 @@ function AgentLogin() {
     otpGenerated: yup
       .string()
       .matches(/([0-9]){6}$/, translate(PARENT_DETAILS_PAYMENT.invalidOtp))
-      .test("Is valid OTP number",translate(PARENT_DETAILS_PAYMENT.invalidOtp), (value) => {
+      .test("Is valid OTP number", translate(PARENT_DETAILS_PAYMENT.invalidOtp), (value) => {
         if (otpVerificationStatus === "incorrect") {
           return false;
         } else {
@@ -251,19 +253,19 @@ function AgentLogin() {
         errorMessage={userNotFoundError}
       />
       <div className="flex items-center justify-between">
-      <div className="p-3 ml-5">
-        <Image
-          src={distributerLogo ? distributerLogo : sb_logo}
-          alt="Product logo"
-          width={72}
-          height={30}
-          objectFit={"contain"}
-        />
+        <div className="p-3 ml-5">
+          <Image
+            src={distributerLogo ? distributerLogo : sb_logo}
+            alt="Product logo"
+            width={72}
+            height={30}
+            objectFit={"contain"}
+          />
+        </div>
+        <div className="p-3 mr-5">
+          {appConfig.deploy.multiLanSupport[appConfig?.distributorId.toLowerCase()] ? <LanguageChange /> : ""}
+        </div>
       </div>
-      <div className="p-3 mr-5">
-       {appConfig.deploy.multiLanSupport[appConfig?.distributorId.toLowerCase()] ? <LanguageChange /> : ""}
-        </div>
-        </div>
       <div className="flex justify-center mt-20 mx-3">
         <div className="float-left bg-white rounded-xl p-5">
           <div className="text-6xl text-thicccboi-extra-bold text-black ">
@@ -293,21 +295,30 @@ function AgentLogin() {
             ) : null}
             {emailClicked ? (
               <div>
-                <input
-                  type="password"
-                  className="h-12 input-field-style m-0 w-full mb-3 text-black"
-                  placeholder={translate(LOGIN_LOGOUT.enterOtp)}
-                  name="otpGenerated"
-                  id="otpGenerated"
-                  maxLength={6}
-                  value={values.otpGenerated}
-                  onChange={handleOTPChange}
-                  onPaste={() => {
-                    setPasted(true);
-                    handlePaste;
-                    setOTPVerificationStatus("");
-                  }}
-                />
+                <div className="relative w-full">
+                  <input
+                    type={showOtp ? "text":"password"}
+                    className="h-12 input-field-style m-0 w-full mb-3 text-black"
+                    placeholder={translate(LOGIN_LOGOUT.enterOtp)}
+                    name="otpGenerated"
+                    id="otpGenerated"
+                    maxLength={6}
+                    value={values.otpGenerated}
+                    onChange={handleOTPChange}
+                    onPaste={() => {
+                      setPasted(true);
+                      handlePaste;
+                      setOTPVerificationStatus("");
+                    }}
+                  />
+                  <button
+                    type="button"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                    onClick={() => setShowOtp(!showOtp)}
+                  >
+                    {showOtp ? <IoMdEyeOff size={20} /> : <IoMdEye size={20} />}
+                  </button>
+                </div>
                 {showTimer ? (
                   <Timer
                     otpValidationTime={otpValidationTime}
@@ -334,7 +345,7 @@ function AgentLogin() {
                       {translate(KYC_DETAIL.resendOtp)} {resetLoading ? <Loader /> : null}
                     </button>
                     <button
-                      className={(errors.otpGenerated || !values.otpGenerated) ? "button-active  mt-5 button-transition hover:bg-hover-primary" : "button-active btn-gradient mt-5 button-transition hover:bg-hover-primary"} 
+                      className={(errors.otpGenerated || !values.otpGenerated) ? "button-active  mt-5 button-transition hover:bg-hover-primary" : "button-active btn-gradient mt-5 button-transition hover:bg-hover-primary"}
                       onClick={(e) => handleConfirm(values.otpGenerated)}
                       disabled={errors.otpGenerated || !values.otpGenerated}
                     >
@@ -357,7 +368,7 @@ function AgentLogin() {
                 className={(!values.email ||
                   (values.email && errors.email) ||
                   errors.email ||
-                  loading) ? "button-active  mt-5 button-transition hover:bg-hover-primary" : "button-active btn-gradient mt-5 button-transition hover:bg-hover-primary" }
+                  loading) ? "button-active  mt-5 button-transition hover:bg-hover-primary" : "button-active btn-gradient mt-5 button-transition hover:bg-hover-primary"}
                 onClick={handleSignIn}
                 disabled={
                   !values.email ||

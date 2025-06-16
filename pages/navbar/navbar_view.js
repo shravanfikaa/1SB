@@ -134,7 +134,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
                   <div className="hover:cursor-pointer  w-auto"
                     onClick={() => handleRedirection()}
                   >
-                    <Image
+                    <img
                       src={distributerLogo}
                       alt="Product logo"
                       width={100}
@@ -143,7 +143,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
                   </div>
                   : <div className="flex gap-2" onClick={handleHomeBtnClick}>
                     <div className="hover:cursor-pointer w-auto">
-                      <Image
+                      <img
                         src={distributerLogo}
                         alt="Product logo"
                         width={100}
@@ -163,7 +163,7 @@ function NavBar({ shouldShowLogin, getLoginStatus }) {
                     </div>
                   </Link>
                 </div >
-                <div  className={`flex gap-2 ${distributorId?.toLowerCase() === 'northarc' ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'}`} onClick={handleHomeBtnClick}>
+                <div  className={`flex gap-2 ${distributorId?.toLowerCase() === 'northarc' ? 'cursor-not-allowed ' : 'cursor-pointer'}`} onClick={handleHomeBtnClick}>
                   <div className="text-black text-2xl flex items-center gap-2">
                     <AiTwotoneHome className='text-fd-primary cursor-pointer' />
                     <div className="text-black cursor-pointer hidden sm:block">{translate(LOGIN_LOGOUT.home)}</div>

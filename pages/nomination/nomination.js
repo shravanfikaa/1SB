@@ -447,11 +447,11 @@ function AddNominee(props) {
     <div className={`${props.isOnboardingUser ? "h-full" : "h-full "}`}>
       <div className="flex flex-col">
         <div className="text-medium text-6xl mb-2 text-black">{translate(FD_RENEWAL.nomination)} {isNomineeRequired && <span >*</span>}</div>
-        <div className={`text-regular text-xl mb-5 text-subcontent ${props.isOnboardingUser ? "w-[550px]" : ""} ${styles.details_container}`}>
+        <div className={`text-regular text-xl mb-5 text-subcontent ${props.isOnboardingUser ? "w-[550px] text-black" : "text-black"} ${styles.details_container}`}>
           { selectedManufactureId?.toLowerCase() != "sib"  ? translate(FD_RENEWAL.enterNomineeDetailsMFS) : null}
         </div>
         {
-          description ? <div className={`text-regular text-xl mb-5 text-subcontent ${props.isOnboardingUser ? "w-[550px]" : ""} ${styles.details_container}`}>
+          description ? <div className={`text-regular text-xl mb-5 text-subcontent ${props.isOnboardingUser ? "w-[550px] text-black" : "text-black"} ${styles.details_container}`}>
             {description}
           </div> : null
         }
@@ -540,7 +540,7 @@ function AddNominee(props) {
               disabled={isConsentEnabled}
             />
           </div>
-          <div className="text-regular text-xl">
+          <div className="text-regular text-xl text-black">
             {consent}
           </div>
         </div> : null
@@ -548,7 +548,7 @@ function AddNominee(props) {
       {
         selectedNomineeData.length && (selectedManufactureId?.toLowerCase() === "bajaj" || selectedManufactureId?.toLowerCase() === "shriram") ? <div className={`my-3 flex items-start gap-3 ${styles.details_container}`}>
           <div className="form-check mb-3 flex gap-3">
-            <div className="text-regular text-xl w-full text-slate-900">
+            <div className="text-regular text-xl  w-full text-slate-900">
               {/* {translate(PERSONAL_DETAILS.taxResidency)} */}
               {translate(`Do you want the nominee's name to be mentioned in the FD receipt? (Yes/No)`)}
             </div>

@@ -375,7 +375,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.tenor)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.tenor)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -386,7 +386,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.highestShortTermInterestRateUpto1Year)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.highestShortTermInterestRateUpto1Year)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -396,7 +396,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.highestMidTermInterestRate1YearTo3Year)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.highestMidTermInterestRate1YearTo3Year)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -406,7 +406,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.highestLongTermInterestRate3YearMore)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.highestLongTermInterestRate3YearMore)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -416,7 +416,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.interestRate)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.interestRate)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -426,7 +426,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.seniorCitizenBenefit)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.seniorCitizenBenefit)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -436,7 +436,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.payoutFrequency)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.payoutFrequency)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -446,7 +446,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.creditRating)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.creditRating)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -456,7 +456,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.minMaxInvestableAmount)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.minMaxInvestableAmount)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -466,7 +466,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.prematureWithdrawal)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.prematureWithdrawal)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -476,7 +476,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.videoKycRequired)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.videoKycRequired)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -486,7 +486,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.savingsAccountRequired)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.savingsAccountRequired)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (
@@ -496,7 +496,7 @@ function Compare() {
                   );
                 })}
               </div>
-              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5">{translate(COMMON_CONSTANTS.instantBookingAvailable)}</div>
+              <div className="bg-slate-100 font-bold border-y-2 text-2xl p-1.5 text-black">{translate(COMMON_CONSTANTS.instantBookingAvailable)}</div>
               <div className="flex flex-row justify-around p-1.5 gap-2">
                 {data.map((api) => {
                   return (

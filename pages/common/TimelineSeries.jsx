@@ -173,7 +173,7 @@ const TimelineSeries = ({ fdCalculatorResult }) => {
             <div className="text-xs text-black">{translate(COMMON_CONSTANTS.maturityAmount)}:</div>
             <div className="text-regular text-black">
               {fdCalculatorResult?.maturity_amount
-                ? `₹ ${parseInt(fdCalculatorResult.maturity_amount).toLocaleString(
+                ? `₹ ${Math.round(fdCalculatorResult.maturity_amount).toLocaleString(
                     "en-IN"
                   )}`
                 : null}
@@ -191,17 +191,18 @@ const TimelineSeries = ({ fdCalculatorResult }) => {
                   )}`
                 : null}
             </div>
-          </div>
-          <div className="pt-6 flex gap-3">
+          </div>{fdCalculatorResult?.productType.toLowerCase() ===
+          "cumulative" && <div className="pt-6 flex gap-3">
             <div className="text-xs text-black">{translate(COMMON_CONSTANTS.maturityAmount)}:</div>
             <div className="text-regular text-black">
               {fdCalculatorResult?.maturity_amount
-                ? `₹ ${parseInt(fdCalculatorResult.maturity_amount).toLocaleString(
+                ? `₹ ${Math.round(fdCalculatorResult.maturity_amount).toLocaleString(
                     "en-IN"
                   )}`
                 : null}
             </div>
-          </div>
+          </div>}
+          
           </>
           
         ) : null}
