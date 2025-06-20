@@ -684,7 +684,7 @@ function AfterReview() {
                       appConfig.distributorId.toLowerCase()=="tipson" ?  <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleExploreMoreBonds}>
                       {translate(AFTER_REVIEW.exploreMoreBonds)}
                     </button>: <button className="button-passive border-fd-primary text-fd-primary mr-3 w-fit px-4" onClick={handleBackbutton}>
-                      Back
+                      Explore More Bond
                     </button>
                     }
                    

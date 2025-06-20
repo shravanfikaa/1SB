@@ -66,7 +66,7 @@ function PaymentDetails({ details }) {
                 <div>
                   <p className="break-all text-black text-regular">{
                     paymentDetails?.displayTenure ? paymentDetails?.displayTenure :
-                      `${paymentDetails?.tenor ? paymentDetails?.tenor : ""} ${translate(COMMON_CONSTANTS.days)}`
+                      `${paymentDetails?.tenor ? paymentDetails?.tenor : ""}`
                   }</p>
                 </div>
                 <div className="text-light-gray pb-1">{translate(AFTER_REVIEW.openDate)}*</div>
@@ -160,7 +160,7 @@ function PaymentDetails({ details }) {
                   <div className="text-light-gray text-medium pb-1">{translate(COMMON_CONSTANTS.tenure)}</div>
                   <p className="break-all text-regular text-black">{
                     paymentDetails?.displayTenure ? paymentDetails?.displayTenure :
-                      `${paymentDetails?.tenor ? paymentDetails?.tenor : ""} ${translate(COMMON_CONSTANTS.days)}`
+                      `${paymentDetails?.tenor ? paymentDetails?.tenor : ""}`
                   }</p>
                 </div>
                 <div className="w-1/5">
